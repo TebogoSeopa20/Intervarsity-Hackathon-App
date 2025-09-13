@@ -5,24 +5,17 @@
 # Team Information
 
 ## ⚒️ Team Name
-``` c
-// TODO: Fill-in the name of your team.
-```
+### K&M
 
 ## 👥 Members
 | Name     | Role                | Institution           | Discord Handle | Email |
 |----------|---------------------|-----------------------| -------------------|-------------|
-| **Name 1**   | Backend Developer   | University of Cape Town | name1 | <email1@gmail.com> |
-| **Name 2**   | Frontend Developer  | University of the Witwatersrand | name2 | <email2@gmail.com> |
-| **Name 3**   | Designer            | University of Johannesburg | name3 | <email3@gmail.com> |
-| **Name 4**   | Q.A Tester          | University of the Western Cape | name4 | <email4@gmail.com> |
+| **Name 1**   | Fullstack Developer   | University of Witwatersrand | Tebogo Seopa | seopatebogo10@gmail.com |
+
 
 ## 🏫 Institution
-``` c
-// TODO: Fill-in the name of the institution your
-// team is competing under.
-```
+### University of the Witwatersrand
 
 ## 📧 Other Contact Info
-- GitHub Repo: <https://github.com/user-name/repo-name>
-- Other Info (if available): LinkedIn, Website, etc.
+- GitHub Repo:https://github.com/TebogoSeopa20/Intervarsity-Hackathon-App
+- Other Info: Mobile Number: 066 157 0078
