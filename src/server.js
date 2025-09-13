@@ -7,13 +7,13 @@ const session = require('express-session');
 const { createClient } = require('@supabase/supabase-js');
 const axios = require('axios');
 const jwt = require('jsonwebtoken');
-const plantsApi = require('./api/plants-api');
-const culturePracticeApi = require('./api/cultural-practices-api');
-const appointmentsApi = require('./api/appointments-api');
-const engagementsApi = require('./api/engagements-api');
-const usersApi = require('./api/users-api');
-const seekerReportsApi = require('./api/seeker-reports-api');
-const contributorReportsApi = require('./api/contributor-reports-api');
+const plantsApi = require('./backend/api/plants-api');
+const culturePracticeApi = require('./backend/api/cultural-practices-api');
+const appointmentsApi = require('./backend/api/appointments-api');
+const engagementsApi = require('./backend/api/engagements-api');
+const usersApi = require('./backend/api/users-api');
+const seekerReportsApi = require('./backend/api/seeker-reports-api');
+const contributorReportsApi = require('./backend/api/contributor-reports-api');
 
 // Create the Express application
 const app = express();
