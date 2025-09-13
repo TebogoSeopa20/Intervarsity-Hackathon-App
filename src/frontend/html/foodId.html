@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Food Scanner</title>
+    <meta name="description" content="Identify food products and learn about their nutritional value and safety.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/foodId.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="seeker-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search food products by name..." class="search-input" id="foodSearchInput">
+            <button class="search-btn" id="foodSearchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder2.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Knowledge Seeker</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="seeker-dashboard.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="foodId.html" class="nav-item active">
+                    <i class="fas fa-utensils"></i>
+                    <span>Food Scanner</span>
+                </a>
+                <a href="seeker-engagements.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="seeker-reports.html" class="nav-item">
+                    <i class="fas fa-flag"></i>
+                    <span>Report Product</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-medal"></i>
+                    <span>Consumer</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Food Scanner Section -->
+            <section id="food-scanner" class="dashboard-section active">
+                <div class="welcome-banner">
+                    <h1>Food Scanner</h1>
+                    <p>Scan barcodes, analyze food images, or search for food products to check their nutritional information</p>
+                </div>
+
+                <!-- Scanner Options -->
+                <div class="scanner-options">
+                    <div class="option-card active" id="barcodeOption">
+                        <i class="fas fa-barcode"></i>
+                        <h3>Scan Barcode</h3>
+                        <p>Use your camera to scan product barcodes</p>
+                    </div>
+                    <div class="option-card" id="searchOption">
+                        <i class="fas fa-search"></i>
+                        <h3>Search Product</h3>
+                        <p>Search for products by name</p>
+                    </div>
+                    <div class="option-card" id="manualOption">
+                        <i class="fas fa-keyboard"></i>
+                        <h3>Enter Barcode</h3>
+                        <p>Manually enter the barcode number</p>
+                    </div>
+                    <div class="option-card" id="plateAnalysisOption">
+                        <i class="fas fa-camera"></i>
+                        <h3>Food Plate Analysis</h3>
+                        <p>Analyze food images for nutrition info</p>
+                    </div>
+                </div>
+
+                <!-- Barcode Scanner -->
+                <div class="scanner-section active" id="barcodeScanner">
+                    <div class="scanner-container">
+                        <div id="scanner-placeholder" class="scanner-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <p>Camera access required for barcode scanning</p>
+                            <button class="btn btn-primary" id="startScanner">Start Scanner</button>
+                        </div>
+                        <div id="scanner-view" class="scanner-view" style="display: none;">
+                            <div id="interactive" class="viewport"></div>
+                            <div class="scanner-controls">
+                                <button class="btn btn-outline" id="switchCamera">
+                                    <i class="fas fa-sync-alt"></i> Switch Camera
+                                </button>
+                                <button class="btn btn-primary" id="captureBarcode">
+                                    <i class="fas fa-camera"></i> Capture
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manual Barcode Input -->
+                <div class="scanner-section" id="manualInput">
+                    <div class="manual-input-container">
+                        <div class="input-group">
+                            <label for="barcodeInput">Enter Barcode Number</label>
+                            <input type="text" id="barcodeInput" placeholder="e.g., 3017624010701">
+                            <button class="btn btn-primary" id="submitBarcode">Search Product</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food Plate Analysis -->
+                <div class="scanner-section" id="plateAnalysis">
+                    <div class="plate-analysis-container">
+                        <div class="upload-methods">
+                            <div class="upload-option" id="uploadImageOption">
+                                <i class="fas fa-upload"></i>
+                                <h3>Upload Image</h3>
+                                <p>Select a food image from your device</p>
+                                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                                <button class="btn btn-outline" id="triggerUpload">Choose File</button>
+                            </div>
+                            <div class="upload-option" id="captureImageOption">
+                                <i class="fas fa-camera"></i>
+                                <h3>Take Photo</h3>
+                                <p>Use your camera to capture food</p>
+                                <button class="btn btn-outline" id="startCamera">Open Camera</button>
+                            </div>
+                            <div class="upload-option" id="urlImageOption">
+                                <i class="fas fa-link"></i>
+                                <h3>Image URL</h3>
+                                <p>Enter URL of a food image</p>
+                                <div class="url-input-group">
+                                    <input type="text" id="imageUrlInput" placeholder="https://example.com/food.jpg">
+                                    <button class="btn btn-primary" id="submitImageUrl">Analyze</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="cameraView" class="camera-view" style="display: none;">
+                            <video id="cameraFeed" autoplay playsinline></video>
+                            <div class="camera-controls">
+                                <button class="btn btn-outline" id="switchFoodCamera">
+                                    <i class="fas fa-sync-alt"></i> Switch Camera
+                                </button>
+                                <button class="btn btn-primary" id="captureFoodImage">
+                                    <i class="fas fa-camera"></i> Capture
+                                </button>
+                                <button class="btn btn-secondary" id="cancelCamera">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="imagePreview" class="image-preview" style="display: none;">
+                            <img id="previewImage" src="" alt="Food preview">
+                            <div class="preview-controls">
+                                <button class="btn btn-outline" id="reanalyzeImage">
+                                    <i class="fas fa-redo"></i> Try Another
+                                </button>
+                                <button class="btn btn-primary" id="analyzeImage">
+                                    <i class="fas fa-search"></i> Analyze Food
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Results -->
+                <div class="scanner-section" id="searchResults">
+                    <div class="search-results-container">
+                        <div id="searchResultsList" class="results-list">
+                            <!-- Search results will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="product-info-section" id="productInfo" style="display: none;">
+                    <div class="product-header">
+                        <div class="product-image" id="productImage">
+                            <i class="fas fa-image" id="productPlaceholder"></i>
+                        </div>
+                        <div class="product-details">
+                            <h2 id="productName">Product Name</h2>
+                            <p id="productBrand">Brand Name</p>
+                            <div class="product-barcode">
+                                <span>Barcode: </span>
+                                <span id="productBarcode">0000000000000</span>
+                            </div>
+                        </div>
+                        <div class="product-grade" id="nutritionGrade">
+                            <span>?</span>
+                        </div>
+                    </div>
+
+                    <div class="product-tabs">
+                        <button class="tab-btn active" data-tab="nutrition">Nutrition</button>
+                        <button class="tab-btn" data-tab="ingredients">Ingredients</button>
+                        <button class="tab-btn" data-tab="safety">Safety Info</button>
+                    </div>
+
+                    <div class="tab-content active" id="nutritionTab">
+                        <div class="nutrition-facts">
+                            <h3>Nutrition Facts</h3>
+                            <div class="nutrition-grid" id="nutritionGrid">
+                                <!-- Nutrition facts will be populated here -->
+                            </div>
+                        </div>
+                        <div class="nutri-score">
+                            <h3>Nutri-Score: <span id="nutriScoreValue">?</span></h3>
+                            <div class="score-explanation" id="scoreExplanation">
+                                <!-- Score explanation will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="ingredientsTab">
+                        <div class="ingredients-list">
+                            <h3>Ingredients</h3>
+                            <p id="ingredientsText">No ingredients information available.</p>
+                        </div>
+                        <div class="allergens-info">
+                            <h3>Allergens</h3>
+                            <p id="allergensText">No allergen information available.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="safetyTab">
+                        <div class="safety-info">
+                            <h3>Food Safety Information</h3>
+                            <div class="safety-status" id="safetyStatus">
+                                <i class="fas fa-question-circle"></i>
+                                <p>Safety information not available for this product.</p>
+                            </div>
+                            <div class="safety-tips">
+                                <h4>Food Safety Tips</h4>
+                                <ul>
+                                    <li>Check expiration dates before consumption</li>
+                                    <li>Look for signs of tampering or damage to packaging</li>
+                                    <li>Store products according to package instructions</li>
+                                    <li>When in doubt, throw it out</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn btn-outline" id="saveProduct">
+                            <i class="fas fa-bookmark"></i> Save Product
+                        </button>
+                        <button class="btn btn-primary" id="newScan">
+                            <i class="fas fa-redo"></i> Scan Another
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Analysis Results -->
+                <div class="food-analysis-section" id="foodAnalysis" style="display: none;">
+                    <div class="analysis-header">
+                        <h2>Food Plate Analysis</h2>
+                        <p>AI-powered analysis of your food image</p>
+                    </div>
+                    
+                    <div class="analysis-image">
+                        <img id="analyzedImage" src="" alt="Analyzed food">
+                    </div>
+                    
+                    <div class="analysis-tabs">
+                        <button class="tab-btn active" data-tab="foods">Foods Identified</button>
+                        <button class="tab-btn" data-tab="nutrition">Nutrition Summary</button>
+                        <button class="tab-btn" data-tab="insights">Health Insights</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="foodsTab">
+                        <h3>Foods Identified</h3>
+                        <div class="foods-list" id="foodsList">
+                            <!-- Foods will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="nutritionTab">
+                        <h3>Nutrition Summary</h3>
+                        <div class="nutrition-summary" id="nutritionSummary">
+                            <!-- Nutrition summary will be populated here -->
+                        </div>
+                        <div class="macronutrient-chart">
+                            <h4>Macronutrient Distribution</h4>
+                            <div class="macronutrient-bars">
+                                <div class="macro-bar protein">
+                                    <div class="macro-label">Protein</div>
+                                    <div class="macro-bar-container">
+                                        <div class="macro-fill" id="proteinBar"></div>
+                                        <div class="macro-percent" id="proteinPercent"></div>
+                                    </div>
+                                </div>
+                                <div class="macro-bar carbs">
+                                    <div class="macro-label">Carbs</div>
+                                    <div class="macro-bar-container">
+                                        <div class="macro-fill" id="carbsBar"></div>
+                                        <div class="macro-percent" id="carbsPercent"></div>
+                                    </div>
+                                </div>
+                                <div class="macro-bar fats">
+                                    <div class="macro-label">Fats</div>
+                                    <div class="macro-bar-container">
+                                        <div class="macro-fill" id="fatsBar"></div>
+                                        <div class="macro-percent" id="fatsPercent"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="insightsTab">
+                        <h3>Health Insights</h3>
+                        <div class="health-insights" id="healthInsights">
+                            <!-- Health insights will be populated here -->
+                        </div>
+                        <div class="dietary-flags" id="dietaryFlags">
+                            <!-- Dietary flags will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-actions">
+                        <button class="btn btn-outline" id="saveAnalysis">
+                            <i class="fas fa-bookmark"></i> Save Analysis
+                        </button>
+                        <button class="btn btn-primary" id="newAnalysis">
+                            <i class="fas fa-redo"></i> Analyze Another
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState" style="display: none;">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading product information...</p>
+                    </div>
+                </div>
+
+                <!-- Error State -->
+                <div class="error-state" id="errorState" style="display: none;">
+                    <div class="error-content">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Product Not Found</h3>
+                        <p id="errorMessage">We couldn't find information for this product.</p>
+                        <button class="btn btn-primary" id="tryAgain">Try Again</button>
+                    </div>
+                </div>
+
+                <!-- Recently Scanned -->
+                <div class="recently-scanned">
+                    <h3>Recently Scanned Foods</h3>
+                    <div class="scanned-list" id="recentScanned">
+                        <!-- Recently scanned items will be populated here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/foodId.js"></script>
+</body>
+</html>

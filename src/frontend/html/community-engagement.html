@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Community Engagement</title>
+    <meta name="description" content="Connect with the Imbewu community, share knowledge, and engage with cultural content.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/community-engagements.css">
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="contributor-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search engagements..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">0</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Community Member</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="contributor-status">
+                <div class="status-badge verified">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Verified Contributor</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="contributor-dashboard.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="contributor-foodId.html" class="nav-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>Product Verification</span>
+                </a>
+                <a href="community-engagement.html" class="nav-item active">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="contributor-reports.html" class="nav-item">
+                    <i class="fas fa-flag"></i>
+                    <span>Report Product</span>
+                </a>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-medal"></i>
+                    <span>Vendor/Shop Owner</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <section id="overview" class="dashboard-section active">
+            <div class="engagements-container">
+                <!-- Header Section -->
+                <div class="welcome-banner">
+                    <h1>Community Engagement</h1>
+                    <p>Connect with fellow knowledge keepers, share insights, and discuss cultural practices</p>
+                </div>
+            </section>
+
+                <!-- Create New Engagement Button -->
+                <div class="create-engagement-btn-container">
+                    <button class="btn btn-primary" id="create-engagement-btn">
+                        <i class="fas fa-plus"></i> Create New Engagement
+                    </button>
+                </div>
+
+                <!-- Create New Engagement Form (Initially Hidden) -->
+                <div class="create-engagement-form" id="create-engagement-form" style="display: none;">
+                    <div class="form-header">
+                        <h3>Create New Engagement</h3>
+                        <button class="close-form" id="close-form-btn">&times;</button>
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label for="engagement-type">Engagement Type</label>
+                            <select id="engagement-type">
+                                <option value="post">Post</option>
+                                <option value="question">Question</option>
+                                <option value="announcement">Announcement</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="engagement-title">Title (Optional)</label>
+                            <input type="text" id="engagement-title" placeholder="Add a title...">
+                        </div>
+                        <div class="form-group">
+                            <label for="engagement-content">Content *</label>
+                            <textarea id="engagement-content" placeholder="Share your thoughts, questions, or cultural insights..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="engagement-tags">Tags (comma separated)</label>
+                            <input type="text" id="engagement-tags" placeholder="e.g., tradition, medicine, ceremony">
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" id="cancel-engagement-btn">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="submit-engagement-btn">Post Engagement</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters and Sorting -->
+                <div class="filters-section">
+                    <div class="filter-group">
+                        <label for="content-type">Content Type:</label>
+                        <select id="content-type">
+                            <option value="all">All Content</option>
+                            <option value="post">Posts</option>
+                            <option value="question">Questions</option>
+                            <option value="announcement">Announcements</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By:</label>
+                        <select id="sort-by">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="comments">Most Comments</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="cultural-group">Cultural Group:</label>
+                        <select id="cultural-group">
+                            <option value="all">All Groups</option>
+                            <option value="Zulu">Zulu</option>
+                            <option value="Xhosa">Xhosa</option>
+                            <option value="Pedi">Pedi</option>
+                            <option value="Tswana">Tswana</option>
+                            <option value="Sotho">Sotho</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-outline" id="apply-filters">Apply Filters</button>
+                </div>
+
+                <!-- Engagements Feed -->
+                <div class="engagements-feed" id="engagements-feed">
+                    <!-- Posts will be dynamically loaded here -->
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Loading engagements...</span>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button class="btn btn-outline" id="load-more-btn">Load More</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Engagement Detail Modal -->
+    <div id="engagement-detail-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Engagement Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="engagement-detail-content">
+                <!-- Engagement details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/community-engagements.js"></script>
+</body>
+</html>

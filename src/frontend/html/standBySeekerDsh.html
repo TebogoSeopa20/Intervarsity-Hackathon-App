@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Food Safety Dashboard</title>
+    <meta name="description" content="Protect your family from dangerous food products with real-time safety alerts and product scanning.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/moderator-dashboard.css">
+    <link rel="stylesheet" href="../css/seeker-dashboard.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="seeker-dashboard.html" class="logo">
+            <i class="fas fa-shield-alt logo-icon"></i>
+            <span class="logo-text">FoodGuard</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search products, alerts, or vendors..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count" id="alertCount">0</span>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <div class="avatar-initials">PS</div>
+                </div>
+                <span class="user-name">Parent User</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="foodId.html" class="nav-item">
+                    <i class="fas fa-barcode"></i>
+                    <span>Food Scanner</span>
+                </a>
+                <a href="seeker-engagements.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community</span>
+                </a>
+                <a href="seeker-reports.html" class="nav-item">
+                    <i class="fas fa-flag"></i>
+                    <span>Report Product</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="safety-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Safety Advocate</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Welcome Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="welcome-banner">
+                    <h1>Welcome back, Safety Advocate!</h1>
+                    <p>Protect your family with <span class="safety-highlight">real-time food safety information</span> and community alerts.</p>
+                    <div class="welcome-actions">
+                        <a href="foodId.html" class="btn btn-primary"><i class="fas fa-barcode"></i> Scan Product</a>
+                        <a href="seeker-reports.html" class="btn btn-outline"><i class="fas fa-flag"></i> Report Issue</a>
+                    </div>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-barcode"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="scannedCount">0</h3>
+                            <p>Products Scanned</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="reportedCount">0</h3>
+                            <p>Products Reported</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="communityCount">0</h3>
+                            <p>Community Posts</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="safeVendors">0</h3>
+                            <p>Safe Vendors Found</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safety Alerts -->
+                <div class="alerts-section">
+                    <div class="section-header">
+                        <h2>Recent Safety Alerts</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="alerts-list" id="safetyAlerts">
+                        <div class="alert-item critical">
+                            <div class="alert-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h3>Recall: Baby Food Brand X</h3>
+                                <p>Potential contamination detected in batches sold between Oct-Nov 2023</p>
+                                <span class="alert-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="alert-item warning">
+                            <div class="alert-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h3>Allergen Warning: Product Y</h3>
+                                <p>Undeclared milk ingredients found in vegan-labeled products</p>
+                                <span class="alert-time">Yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Scans -->
+                <div class="scans-section">
+                    <div class="section-header">
+                        <h2>Recently Scanned Products</h2>
+                        <a href="foodId.html" class="view-all">Scan More</a>
+                    </div>
+                    <div class="scans-grid" id="recentScans">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Vendor Ratings -->
+                <div class="vendors-section">
+                    <div class="section-header">
+                        <h2>Vendor Safety Ratings</h2>
+                        <a href="#" class="view-all">See All Vendors</a>
+                    </div>
+                    <div class="vendors-grid">
+                        <div class="vendor-card">
+                            <div class="vendor-header">
+                                <div class="vendor-image" style="background-color: #4CAF50;">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div class="vendor-info">
+                                    <h3>FreshMart</h3>
+                                    <div class="safety-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8/5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>No safety incidents reported in the last 90 days</p>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-header">
+                                <div class="vendor-image" style="background-color: #FF9800;">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div class="vendor-info">
+                                    <h3>QuickShop</h3>
+                                    <div class="safety-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>3.2/5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>2 minor incidents in the last 60 days</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/seeker-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Sign In</title>
+    <meta name="description" content="Sign in to Imbewu - AI-powered Food Safety Scanner for Child Health">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/signup2.css">
+    
+   
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="landing.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="landing.html#about">About</a></li>
+            <li><a href="landing.html#features">Features</a></li>
+            <li><a href="landing.html#testimonials">Testimonials</a></li>
+            <li><a href="landing.html#community">Community</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="signup.html">
+                <button class="btn btn-primary">Join Now</button>
+            </a>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="landing.html" class="logo">
+                <i class="fas fa-shield-alt logo-icon"></i>
+                <span class="logo-text">Imbewu</span>
+            </a>
+            <button id="mobile-nav-close" class="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="landing.html#about">About</a></li>
+            <li><a href="landing.html#features">Features</a></li>
+            <li><a href="landing.html#testimonials">Testimonials</a></li>
+            <li><a href="landing.html#community">Community</a></li>
+        </ul>
+        <div class="mobile-auth-buttons">
+            <a href="signup.html"><button class="btn btn-primary">Join Now</button></a>
+        </div>
+    </nav>
+
+    <main class="login-container">
+        <section class="login-form-container">
+            <h1>Welcome Back</h1>
+            <p class="login-intro">Sign in to continue protecting your community with Imbewu</p>
+            
+            <div id="formStatus" class="form-status-message"></div>
+            
+            <button id="googleSignInBtn" class="google-btn" onclick="window.location.href='/auth/google'">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" class="google-icon">
+                Sign in with Google
+            </button>
+            
+            <div id="googleError" class="google-error"></div>
+            
+            <div class="separator">or sign in with email</div>
+            
+            <form id="loginForm" class="login-form" novalidate>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" class="styled-input" required>
+                    <span class="error-message" id="email_error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" class="styled-input" required>
+                        <button type="button" class="toggle-password-visibility">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="error-message" id="password_error"></span>
+                </div>
+                <div class="form-group remember-forgot">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe" name="rememberMe" class="styled-checkbox">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary login-btn">Sign In</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+            </div>
+        </section>
+        <section class="login-image">
+            <div class="login-overlay">
+                <h2>Continue Protecting <span class="gradient-text">Your Community</span></h2>
+                <ul class="benefit-list">
+                    <li><i class="fas fa-camera"></i> Scan products for harmful ingredients</li>
+                    <li><i class="fas fa-bell"></i> Receive safety alerts about dangerous products</li>
+                    <li><i class="fas fa-store"></i> Check vendor safety ratings</li>
+                    <li><i class="fas fa-users"></i> Connect with other safety advocates</li>
+                    <li><i class="fas fa-shield-alt"></i> Report unsafe products to protect others</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <article class="footer-column">
+                    <header class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        Imbewu
+                    </header>
+                    <p>Protecting children from dangerous snacks with AI-powered food safety scanning and community reporting.</p>
+                </article>
+                <article class="footer-column">
+                    <h3>Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Product Scanning</a></li>
+                        <li><a href="#">Safety Alerts</a></li>
+                        <li><a href="#">Vendor Ratings</a></li>
+                        <li><a href="#">Community Reporting</a></li>
+                    </ul>
+                </article>
+                <article class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Food Safety Tips</a></li>
+                        <li><a href="#">Dangerous Ingredients Guide</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Educational Materials</a></li>
+                    </ul>
+                </article>
+                <article class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </article>
+            </div>
+            <footer class="footer-bottom">
+                <p>&copy; 2025 Imbewu. All rights reserved.</p>
+            </footer>
+        </div>
+    </footer>
+
+    <script src="../js/login.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

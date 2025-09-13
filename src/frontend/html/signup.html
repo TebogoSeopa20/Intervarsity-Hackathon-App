@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Sign Up</title>
+    <meta name="description" content="Join Imbewu - AI-powered Cultural-Ethnobotany and Ancestral Knowledge System">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/form-status.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/signup2.css">
+    <link rel="stylesheet" href="../css/terms-modal.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="landing.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="landing.html#about">About</a></li>
+            <li><a href="landing.html#features">Features</a></li>
+            <li><a href="landing.html#testimonials">Testimonials</a></li>
+            <li><a href="landing.html#community">Community</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="login.html">
+                <button class="btn btn-outline">Sign In</button>
+            </a>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="landing.html" class="logo">
+                <i class="fas fa-seedling logo-icon"></i>
+                <span class="logo-text">Imbewu</span>
+            </a>
+            <button id="mobile-nav-close" class="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="landing.html#about">About</a></li>
+            <li><a href="landing.html#features">Features</a></li>
+            <li><a href="landing.html#testimonials">Testimonials</a></li>
+            <li><a href="landing.html#community">Community</a></li>
+        </ul>
+        <div class="mobile-auth-buttons">
+            <a href="login.html"><button class="btn btn-outline">Sign In</button></a>
+        </div>
+    </nav>
+
+    <main class="signup-container">
+        <section class="signup-form-container">
+            <h1>Join Our Knowledge Community</h1>
+            <p class="signup-intro">Create your account to access ancestral wisdom, ethnobotanical knowledge, and cultural preservation tools.</p>
+            
+            <form id="signupForm" class="signup-form" novalidate>
+                <!-- Step 1: Role Selection -->
+                <fieldset class="form-step active" id="step1">
+                    <legend class="step-title">Select Your Role</legend>
+                    <div class="role-selection">
+                        <div class="role-option">
+                            <input type="radio" id="seeker" name="role" value="seeker" checked>
+                            <label for="parent">
+                                <i class="fas fa-user"></i>
+                                <span>Parent/Caregiver</span>
+                                <small>Protect your family from dangerous food products</small>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="contributor" name="role" value="contributor">
+                            <label for="contributor">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <span>Vendor/Shop Owner</span>
+                                <small>Verify your products and build customer trust</small>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="moderator" name="role" value="moderator">
+                            <label for="moderator">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Community Advocate</span>
+                                <small>Help monitor food safety in your neighborhood</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-primary next-btn">Continue</button>
+                    </div>
+                </fieldset>
+
+                <!-- Step 2: Personal Information -->
+                <fieldset class="form-step" id="step2">
+                    <legend class="step-title">Personal Information</legend>
+                    <div class="form-group">
+                        <label for="full_name">Full Name*</label>
+                        <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" class="styled-input" required>
+                        <span class="error-message" id="full_name_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" class="styled-input" required>
+                        <span class="error-message" id="email_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Optional contact number" class="styled-input">
+                        <span class="error-message" id="phone_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cultural_affiliation">Province*</label>
+                        <select id="cultural_affiliation" name="cultural_affiliation" class="styled-input" required>
+                            <option value="">Select your province</option>
+                            <option value="zulu">Gauteng</option>
+                            <option value="xhosa">Eastern Cape</option>
+                            <option value="pedi">Limpopo</option>
+                            <option value="pedi">Free State</option>
+                            <option value="xhosa">Western Cape</option>
+                            <option value="zulu">KwaZulu-Natal</option>
+                            <option value="swazi">North West</option>
+                            <option value="ndebele">Mpumalanga</option>
+                            <option value="multiple">Northern Cape</option>
+                        </select>
+                        <span class="error-message" id="cultural_affiliation_error"></span>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Continue</button>
+                    </div>
+                </fieldset>
+
+                <!-- Step 3: Account Security -->
+                <fieldset class="form-step" id="step3">
+                    <legend class="step-title">Account Security</legend>
+                    <div class="form-group">
+                        <label for="password">Password*</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="password" name="password" placeholder="Create a strong password" class="styled-input" required>
+                            <button type="button" class="toggle-password-visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error-message" id="password_error"></span>
+                        <div class="password-requirements">
+                            <p>Password must:</p>
+                            <ul>
+                                <li id="length">Be at least 8 characters long</li>
+                                <li id="uppercase">Contain at least 1 uppercase letter</li>
+                                <li id="lowercase">Contain at least 1 lowercase letter</li>
+                                <li id="number">Contain at least 1 number</li>
+                                <li id="special">Contain at least 1 special character</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password*</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" class="styled-input" required>
+                            <button type="button" class="toggle-password-visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error-message" id="confirmPassword_error"></span>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Continue</button>
+                    </div>
+                </fieldset>
+
+                <!-- Step 4: Terms and Cultural Ethics -->
+                <fieldset class="form-step" id="step4">
+                    <legend class="step-title">Terms & Cultural Ethics</legend>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="termsAgree" name="termsAgree" class="styled-checkbox" required>
+                            <label for="termsAgree">I agree to the <a href="#" id="showTerms" class="terms-link">Terms of Service</a> and <a href="#" id="showPrivacy" class="terms-link">Privacy Policy</a></label>
+                        </div>
+                        <span class="error-message" id="termsAgree_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="ethicsAgree" name="ethicsAgree" class="styled-checkbox" required>
+                            <label for="ethicsAgree">I agree to respect cultural protocols and use knowledge shared on this platform ethically and responsibly</label>
+                        </div>
+                        <span class="error-message" id="ethicsAgree_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletterAgree" name="newsletterAgree" class="styled-checkbox">
+                            <label for="newsletterAgree">I'd like to receive updates about new features and cultural events</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-btn">Back</button>
+                        <button type="submit" class="btn btn-primary submit-btn">Create Account</button>
+                    </div>
+                    <div id="formStatus" class="form-status-message"></div>
+                </fieldset>
+            </form>
+            
+            <div class="signup-footer">
+                <p>Already have an account? <a href="login.html">Sign in here</a></p>
+            </div>
+        </section>
+        <section class="signup-image">
+            <div class="signup-overlay">
+                <h2>Join Us <span class="gradient-text">To Protect Our </span> Community</h2>
+                <ul class="benefit-list">
+                    <li><i class="fas fa-camera"></i> Scan products for harmful ingredients</li>
+                    <li><i class="fas fa-bell"></i> Receive safety alerts about dangerous products</li>
+                    <li><i class="fas fa-store"></i> Check vendor safety ratings</li>
+                    <li><i class="fas fa-users"></i> Connect with other safety advocates</li>
+                    <li><i class="fas fa-shield-alt"></i> Report unsafe products to protect others</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms and Conditions</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="terms-updated">Last Updated: August 30, 2025</p>
+                
+                <section class="terms-section">
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing or using the Imbewu platform ("the Service"), operated by Imbewu ("we," "us," or "our"), you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of the terms, you may not access the Service.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>2. Description of Service</h3>
+                    <p>Imbewu is an AI-powered cultural-ethnobotany and ancestral knowledge system that provides:</p>
+                    <ul>
+                        <li>Plant identification through computer vision technology</li>
+                        <li>Cultural and medicinal information about plants</li>
+                        <li>Access to traditional knowledge and practices</li>
+                        <li>Community features for knowledge sharing</li>
+                        <li>Digital ritual calendar and cultural event information</li>
+                    </ul>
+                    <p><strong>Important:</strong> Imbewu is designed for cultural education and preservation purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>3. User Accounts</h3>
+                    <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account.</p>
+                    <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>4. Cultural Respect and Ethical Use</h3>
+                    <p>As a user of Imbewu, you agree to:</p>
+                    <ul>
+                        <li>Respect all cultural knowledge, traditions, and practices shared on the platform</li>
+                        <li>Not appropriate, commercialize, or misuse cultural information without proper authorization</li>
+                        <li>Acknowledge the source of knowledge when sharing information obtained from the platform</li>
+                        <li>Use the platform in a manner that honors the cultural contexts from which knowledge originates</li>
+                        <li>Not use the platform for any form of cultural exploitation or appropriation</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>5. Intellectual Property Rights</h3>
+                    <p>The Service and its original content, features, and functionality are and will remain the exclusive property of Imbewu and its licensors. The Service is protected by copyright, trademark, and other laws of both the South Africa and foreign countries.</p>
+                    <p>Traditional knowledge shared on the platform remains the intellectual property of the originating cultures and communities. Imbewu acts as a custodian and preservation platform, not an owner of this knowledge.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>6. User Contributions</h3>
+                    <p>By posting, uploading, or contributing any content to the Service, you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, modify, publicly perform, publicly display, reproduce, and distribute such content on and through the Service.</p>
+                    <p>You retain any and all of your rights to any content you submit, post or display on or through the Service and you are responsible for protecting those rights.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>7. Prohibited Uses</h3>
+                    <p>You may use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:</p>
+                    <ul>
+                        <li>In any way that violates any applicable national or international law or regulation</li>
+                        <li>To exploit, harm, or attempt to exploit or harm minors in any way</li>
+                        <li>To transmit, or procure the sending of, any advertising or promotional material</li>
+                        <li>To impersonate or attempt to impersonate the company, a company employee, another user, or any other person or entity</li>
+                        <li>In any way that infringes upon the rights of others, or in any way is illegal, threatening, fraudulent, or harmful</li>
+                        <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Service</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>8. Medical Disclaimer</h3>
+                    <p><strong>Important:</strong> The information provided by Imbewu is for cultural and educational purposes only and is not intended as medical advice. The traditional uses of plants described in the Service have not been evaluated by medical authorities and should not be used to diagnose, treat, cure, or prevent any disease without consulting a healthcare professional.</p>
+                    <p>Never disregard professional medical advice or delay in seeking it because of something you have read on the Imbewu platform. If you think you may have a medical emergency, call your doctor or emergency services immediately.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>9. Limitation of Liability</h3>
+                    <p>In no event shall Imbewu, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+                    <ul>
+                        <li>Your access to or use of or inability to access or use the Service</li>
+                        <li>Any conduct or content of any third party on the Service</li>
+                        <li>Any content obtained from the Service</li>
+                        <li>Unauthorized access, use or alteration of your transmissions or content</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>10. Indemnification</h3>
+                    <p>You agree to defend, indemnify and hold harmless Imbewu and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of:</p>
+                    <ul>
+                        <li>Your use and access of the Service</li>
+                        <li>Your violation of any term of these Terms</li>
+                        <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>11. Changes to Terms</h3>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>12. Governing Law</h3>
+                    <p>These Terms shall be governed and construed in accordance with the laws of South Africa, without regard to its conflict of law provisions.</p>
+                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>13. Contact Information</h3>
+                    <p>If you have any questions about these Terms, please contact us at:</p>
+                    <address>
+                        Imbewu Cultural Preservation Foundation<br>
+                        Email: <a href="mailto:legal@imbewu.org">tebogoseopa10@gmail.com</a><br>
+                        Postal Address: PO Box 123, Cultural District, Johannesburg, 2193, South Africa
+                    </address>
+                </section>
+
+                <div class="terms-acceptance">
+                    <p>By using our Service, you acknowledge that you have read and understood these Terms and Conditions and agree to be bound by them.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="acceptTerms">I Accept</button>
+                <button class="btn btn-outline" id="closeTerms">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <article class="footer-column">
+                    <header class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        Imbewu
+                    </header>
+                    <p>Bridging heritage, health, and modern science through AI-powered cultural preservation and ethnobotanical wisdom.</p>
+                </article>
+                <article class="footer-column">
+                    <h3>Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Plant Identification</a></li>
+                        <li><a href="#">Knowledge Graph</a></li>
+                        <li><a href="#">Ritual Calendar</a></li>
+                        <li><a href="#">Elder Connections</a></li>
+                    </ul>
+                </article>
+                <article class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cultural Database</a></li>
+                        <li><a href="#">Learning Materials</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </article>
+                <article class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" id="showTermsFooter">Privacy Policy</a></li>
+                    </ul>
+                </article>
+            </div>
+            <footer class="footer-bottom">
+                <p>&copy; 2025 Imbewu. All rights reserved.</p>
+            </footer>
+        </div>
+    </footer>
+
+    <script>
+
+    </script>
+    <script src="../js/signup.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/terms-modal.js"></script>
+</body>
+</html>

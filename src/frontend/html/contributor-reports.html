@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Contributor Product Reports</title>
+    <meta name="description" content="Report supply chain issues and manage your product quality reports">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/contributor-reports.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="contributor-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search your reports..." class="search-input" id="reportsSearchInput">
+            <button class="search-btn" id="reportsSearchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Vendor</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="contributor-status">
+                <div class="status-badge verified">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Verified Contributor</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="contributor-dashboard.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="contributor-foodId.html" class="nav-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>Product Verification</span>
+                </a>
+                <a href="community-engagement.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="contributor-reports.html" class="nav-item active">
+                    <i class="fas fa-flag"></i>
+                    <span>Report Product</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-medal"></i>
+                    <span>Vendor/Shop Owner</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Contributor Reports Section -->
+            <section id="contributor-reports" class="dashboard-section active">
+                <div class="welcome-banner">
+                    <h1>Product Quality Reports</h1>
+                    <p>Report supply chain issues and manage your product quality reports</p>
+                </div>
+
+                <!-- Reports Container -->
+                <div class="reports-container">
+                    <!-- Report Form -->
+                    <div class="report-form-container">
+                        <h3>Report a Supply Chain Issue</h3>
+                        <form id="contributorReportForm" class="report-form">
+                            <div class="form-group">
+                                <label for="businessId">Business ID *</label>
+                                <input type="text" id="businessId" name="businessId" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="businessName">Business Name</label>
+                                <input type="text" id="businessName" name="businessName">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productName">Product Name *</label>
+                                <input type="text" id="productName" name="productName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productBrand">Product Brand</label>
+                                <input type="text" id="productBrand" name="productBrand">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productBarcode">Barcode (if available)</label>
+                                <div class="barcode-input-group">
+                                    <input type="text" id="productBarcode" name="productBarcode">
+                                    <button type="button" id="scanBarcodeBtn" class="btn-icon">
+                                        <i class="fas fa-barcode"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="batchNumber">Batch/Lot Number *</label>
+                                <input type="text" id="batchNumber" name="batchNumber" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date (if known)</label>
+                                <input type="date" id="expiryDate" name="expiryDate">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="distributorName">Distributor Name *</label>
+                                <input type="text" id="distributorName" name="distributorName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="distributorAddress">Distributor Address</label>
+                                <textarea id="distributorAddress" name="distributorAddress" rows="2"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reportReason">Issue Type *</label>
+                                <select id="reportReason" name="reportReason" required>
+                                    <option value="">Select an issue type</option>
+                                    <option value="SUSPICIOUS_BATCH">Suspicious Batch</option>
+                                    <option value="KNOWINGLY_SOLD_FAKE">Knowingly Sold Fake Products</option>
+                                    <option value="POOR_CONDITION">Poor Storage Conditions</option>
+                                    <option value="MISSING_BARCODES">Missing Barcodes/Labels</option>
+                                    <option value="EXPIRED_GOODS">Expired Goods</option>
+                                    <option value="DAMAGED_GOODS">Damaged Goods</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reportDescription">Description *</label>
+                                <textarea id="reportDescription" name="reportDescription" rows="4" required placeholder="Please provide details about the supply chain issue..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Upload Evidence (optional)</label>
+                                <div class="file-upload-container">
+                                    <input type="file" id="evidenceUpload" multiple accept="image/*" style="display: none;">
+                                    <button type="button" id="triggerEvidenceUpload" class="btn-outline">
+                                        <i class="fas fa-upload"></i> Add Evidence Photos
+                                    </button>
+                                    <div id="uploadedFilesList" class="uploaded-files-list"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="reset" class="btn btn-outline">Clear Form</button>
+                                <button type="submit" class="btn btn-primary">Submit Report</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Reports List -->
+                    <div class="reports-list-container">
+                        <div class="reports-list-header">
+                            <h3>Your Quality Reports</h3>
+                            <div class="filter-controls">
+                                <select id="statusFilter">
+                                    <option value="all">All Statuses</option>
+                                    <option value="PENDING_REVIEW">Pending Review</option>
+                                    <option value="AWAITING_DISTRIBUTOR_RESPONSE">Awaiting Response</option>
+                                    <option value="UNDER_INVESTIGATION">Under Investigation</option>
+                                    <option value="RESOLVED">Resolved</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="reports-list" id="reportsList">
+                            <!-- Reports will be loaded here dynamically -->
+                            <div class="loading-reports">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading your reports...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Report Detail Modal -->
+    <div id="reportDetailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Report Details</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body" id="reportDetailContent">
+                <!-- Report details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content confirm-modal">
+            <div class="modal-header">
+                <h3>Confirm Deletion</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this report? This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelDelete">Cancel</button>
+                <button class="btn btn-danger" id="confirmDelete">Delete Report</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/contributor-reports.js"></script>
+</body>
+</html>

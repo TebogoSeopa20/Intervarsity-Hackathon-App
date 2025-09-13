@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Moderator Dashboard</title>
+    <meta name="description" content="Maintain cultural accuracy and ensure respectful knowledge sharing.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/moderator-dashboard.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="moderator-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search content, users, or reports..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">8</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder3.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Cultural Moderator</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="moderator-status">
+                <div class="status-badge moderator">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Community Advocater</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="moderator-foodId.html" class="nav-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Food Scanner</span>
+                </a>
+                <a href="moderator-engagements.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="reports-analytics.html" class="nav-item">
+                    <i class="fas fa-flag"></i>
+                    <span>Reports & Analytics</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Community Moderator</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Welcome Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="welcome-banner">
+                    <h1>Welcome back, Moderator!</h1>
+                    <p>Your expertise helps ensure <span class="cultural-highlight">food safety</span> and reliable information sharing.</p>
+                    <div class="welcome-actions">
+                        <button class="btn btn-primary"><i class="fas fa-check-double"></i> Review Content</button>
+                        <button class="btn btn-outline"><i class="fas fa-chart-bar"></i> View Reports</button>
+                    </div>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Pending Reviews</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>User Verifications</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Content Reports</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>142</h3>
+                            <p>Items Moderated</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <h2>Recent Moderation Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon approved">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>You <strong>approved</strong> knowledge about <strong>Umhlonyane harvesting techniques</strong></p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon rejected">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>You <strong>rejected</strong> inaccurate information about <strong>Impila preparation</strong></p>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon edited">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>You <strong>edited</strong> cultural context for <strong>African Potato uses</strong></p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Urgent Items -->
+                <div class="urgent-items">
+                    <div class="section-header">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Urgent Attention Needed</h2>
+                    </div>
+                    <div class="urgent-items-grid">
+                        <div class="urgent-item priority-high">
+                            <div class="urgent-content">
+                                <h3>Cultural Misrepresentation Report</h3>
+                                <p>Reported by 3 community members • Zulu cultural practices</p>
+                                <div class="time-indicator">4 hours ago</div>
+                            </div>
+                            <div class="urgent-actions">
+                                <button class="btn btn-sm btn-primary">Review Now</button>
+                            </div>
+                        </div>
+                        <div class="urgent-item priority-medium">
+                            <div class="urgent-content">
+                                <h3>New Contributor Application</h3>
+                                <p>User claims expertise in Xhosa plant medicine • Needs verification</p>
+                                <div class="time-indicator">1 day ago</div>
+                            </div>
+                            <div class="urgent-actions">
+                                <button class="btn btn-sm btn-outline">Review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moderation Queue Preview -->
+                <div class="queue-preview">
+                    <div class="section-header">
+                        <h2>Moderation Queue</h2>
+                        <a href="#content-moderation" class="view-all">View All</a>
+                    </div>
+                    <div class="queue-items">
+                        <div class="queue-item">
+                            <div class="queue-content">
+                                <h3>Traditional uses of African Potato</h3>
+                                <p>Submitted by: Community Contributor • <span class="cultural-tag">Zulu</span></p>
+                                <div class="queue-meta">
+                                    <span class="submission-type">New Knowledge</span>
+                                    <span class="waiting-time">2 days in queue</span>
+                                </div>
+                            </div>
+                            <div class="queue-actions">
+                                <button class="btn btn-sm btn-primary">Review</button>
+                            </div>
+                        </div>
+                        <div class="queue-item">
+                            <div class="queue-content">
+                                <h3>Harvesting timing for Devil's Claw</h3>
+                                <p>Submitted by: Verified Contributor • <span class="cultural-tag">Tswana</span></p>
+                                <div class="queue-meta">
+                                    <span class="submission-type">Knowledge Update</span>
+                                    <span class="waiting-time">1 day in queue</span>
+                                </div>
+                            </div>
+                            <div class="queue-actions">
+                                <button class="btn btn-sm btn-primary">Review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Moderation Section -->
+            <section id="content-moderation" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Content Moderation</h2>
+                    <p>Review and validate community contributions for cultural accuracy</p>
+                </div>
+                
+                <div class="moderation-filters">
+                    <div class="filter-group">
+                        <label>Filter by:</label>
+                        <select>
+                            <option>All Content</option>
+                            <option>Pending Review</option>
+                            <option>Reported Content</option>
+                            <option>Recently Updated</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Cultural Domain:</label>
+                        <select>
+                            <option>All Domains</option>
+                            <option>Zulu</option>
+                            <option>Xhosa</option>
+                            <option>Sotho</option>
+                            <option>Tswana</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Content Type:</label>
+                        <select>
+                            <option>All Types</option>
+                            <option>Plant Knowledge</option>
+                            <option>Cultural Practices</option>
+                            <option>Healing Preparations</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="moderation-list">
+                    <div class="moderation-item">
+                        <div class="moderation-header">
+                            <h3>Traditional preparation of Umhlonyane</h3>
+                            <span class="status pending">Pending Review</span>
+                        </div>
+                        <div class="moderation-content">
+                            <p>Detailed guide on harvesting, drying, and preparing Artemisia afra for respiratory health. Includes traditional methods passed down through generations.</p>
+                            <div class="moderation-meta">
+                                <span class="submitter">Submitted by: Community Contributor</span>
+                                <span class="cultural-tag">Zulu</span>
+                                <span class="submission-date">Submitted 2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="moderation-actions">
+                            <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Approve</button>
+                            <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Reject</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i> Preview</button>
+                        </div>
+                    </div>
+                    
+                    <div class="moderation-item">
+                        <div class="moderation-header">
+                            <h3>Seasonal harvesting guide for medicinal plants</h3>
+                            <span class="status reported">Reported</span>
+                        </div>
+                        <div class="moderation-content">
+                            <p>Comprehensive calendar for optimal harvesting times based on lunar cycles and seasons. Reported for potential inaccuracies in Tswana practices.</p>
+                            <div class="moderation-meta">
+                                <span class="submitter">Submitted by: Verified Contributor</span>
+                                <span class="cultural-tag">Tswana</span>
+                                <span class="submission-date">Submitted 3 days ago • Reported yesterday</span>
+                            </div>
+                            <div class="report-reason">
+                                <strong>Report Reason:</strong> Potential cultural inaccuracies in seasonal timing
+                            </div>
+                        </div>
+                        <div class="moderation-actions">
+                            <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Approve</button>
+                            <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Reject</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i> Preview</button>
+                        </div>
+                    </div>
+                    
+                    <div class="moderation-item">
+                        <div class="moderation-header">
+                            <h3>Traditional preservation techniques</h3>
+                            <span class="status updated">Recently Updated</span>
+                        </div>
+                        <div class="moderation-content">
+                            <p>Methods for storing and preserving plant medicines to maintain potency. Recently updated by contributor based on community feedback.</p>
+                            <div class="moderation-meta">
+                                <span class="submitter">Submitted by: Knowledge Contributor</span>
+                                <span class="cultural-tag">Xhosa</span>
+                                <span class="submission-date">Originally submitted 1 week ago • Updated today</span>
+                            </div>
+                        </div>
+                        <div class="moderation-actions">
+                            <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Approve</button>
+                            <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Reject</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i> Preview</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- User Management Section -->
+            <section id="user-management" class="dashboard-section">
+                <div class="section-header">
+                    <h2>User Management</h2>
+                    <p>Manage user accounts, permissions, and contributor applications</p>
+                </div>
+                
+                <div class="user-management-tabs">
+                    <button class="tab-btn active" data-tab="applications">Contributor Applications</button>
+                    <button class="tab-btn" data-tab="reported-users">Reported Users</button>
+                    <button class="tab-btn" data-tab="user-permissions">User Permissions</button>
+                </div>
+                
+                <div class="tab-content active" id="applications">
+                    <div class="applications-list">
+                        <div class="application-item">
+                            <div class="applicant-info">
+                                <div class="applicant-avatar">
+                                    <img src="../images/avatar-placeholder.png" alt="Applicant">
+                                </div>
+                                <div class="applicant-details">
+                                    <h3>Thando Mbeki</h3>
+                                    <p>Applied for: Plant Medicine Contributor</p>
+                                    <div class="applicant-meta">
+                                        <span class="cultural-background">Xhosa Cultural Background</span>
+                                        <span class="application-date">Applied 3 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="application-content">
+                                <h4>Areas of Expertise</h4>
+                                <ul>
+                                    <li>Traditional plant medicine</li>
+                                    <li>Seasonal harvesting practices</li>
+                                    <li>Xhosa cultural traditions</li>
+                                </ul>
+                                
+                                <h4>Application Statement</h4>
+                                <p>"I have learned traditional plant medicine from my grandmother and have been practicing for over 15 years. I want to share this knowledge to preserve our cultural heritage."</p>
+                            </div>
+                            <div class="application-actions">
+                                <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Approve</button>
+                                <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Reject</button>
+                                <button class="btn btn-sm btn-outline"><i class="fas fa-envelope"></i> Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other tab contents would be here -->
+            </section>
+            
+            <!-- More sections would be here -->
+        </main>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/moderator-dashboard.js"></script>
+</body>
+</html>
