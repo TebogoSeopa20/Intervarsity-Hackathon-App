@@ -1,15 +1,45 @@
 {
-  "name": "src",
+  "name": "intervarsity-hackathon-app",
   "version": "1.0.0",
-  "description": "All source code files should be placed in this folder. You may organize this folder as needed (e.g., `backend/`, `frontend/`, `lib/`, `source/` and or `include/` folders and so on).",
-  "main": "index.js",
+  "description": "",
+  "main": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TebogoSeopa20/Intervarsity-Hackathon-App"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TebogoSeopa20/Intervarsity-Hackathon-App/issues"
+  },
+  "homepage": "https://github.com/TebogoSeopa20/Intervarsity-Hackathon-App#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "@supabase/supabase-js": "^2.53.0",
+    "axios": "^1.11.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "path": "^0.12.7",
+    "session": "^0.1.0",
+    "url": "^0.11.4",
+    "verbose": "^0.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5"
   }
 }
