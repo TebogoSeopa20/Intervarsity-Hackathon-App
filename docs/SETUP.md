@@ -9,27 +9,33 @@ Follow the steps below to set up and run the project. (Example)
 ---
 
 ## 📦 Requirements
-``` c
-// TODO: List software, runtimes, frameworks, and or dependencies
-// along with instructions on how to set each up.
-```
-- Example: Node.js v18+
-- Example: Python 3.10
-- Example: Docker
 
----
+Before running the project, make sure you have the following installed:
+
+- **Node.js v18+**  
+  [Download & Install Node.js](https://nodejs.org/)  
+  Verify installation:  
+  ```bash
+  node -v
+  npm -v
+
 
 ## ⚙️ Installation
-``` bash
-# Clone the repository
-git clone <your-repo-url>
-cd <repo-name>
 
-# Install dependencies
-<insert command here>
-```
+# Clone the repository
+git clone https://github.com/TebogoSeopa20/Intervarsity-Hackathon-App.git
+cd Intervarsity-Hackathon-App
+
+# Install dependencies (both dependencies & devDependencies)
+npm install
 
 ## ▶️ Running the Project
-``` bash
-<insert run command here> # Or an explanation on what to do
-```
+
+# Navigate into the source folder
+cd src
+
+# Start the server
+npm start
+
+# Open your browser and visit:
+http://localhost:3000
