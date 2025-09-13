@@ -25,7 +25,6 @@
 
 
 ## 📌 Future Improvements
-// TODO: Mention ideas or features you’d add if given more time.
 
 ### 1. **Offline Mode**  
    Enable scanning and risk alerts without internet, crucial for rural or low-connectivity areas.  
