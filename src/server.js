@@ -633,5 +633,5 @@ app.get('/signup-cultural', (req, res) => {
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Digital Sangoma Server running on port ${PORT}`);
+  console.log(`Imbewu Server running on port ${PORT}`);
 });
