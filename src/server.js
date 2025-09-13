@@ -63,8 +63,8 @@ app.use('/css', express.static(path.join(__dirname, 'frontend', 'css')));
 // Serve JS files from js directory
 app.use('/js', express.static(path.join(__dirname, 'frontend', 'js')));
 
-// Serve images from images directory
-app.use('/images', express.static(path.join(__dirname, 'frontend', 'images')));
+// Serve static files from assets directory
+app.use('/assets', express.static(path.join(__dirname, '..', 'assets')));
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
