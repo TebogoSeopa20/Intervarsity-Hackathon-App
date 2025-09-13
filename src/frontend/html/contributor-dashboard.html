@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Contributor Dashboard</title>
+    <meta name="description" content="Share your cultural knowledge and contribute to preserving ancestral wisdom.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="contributor-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search knowledge, submissions, or members..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">5</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Knowledge Contributor</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="contributor-status">
+                <div class="status-badge verified">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Verified Contributor</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="contributor-dashboard.html" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="contributor-foodId.html" class="nav-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>Product Verification</span>
+                </a>
+                <a href="community-engagement.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="contributor-reports.html" class="nav-item">
+                    <i class="fas fa-flag"></i>
+                    <span>Report Product</span>
+                </a>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-medal"></i>
+                    <span>Vendor/Shop Owner</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Welcome Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="welcome-banner">
+                    <h1>Welcome back, Contributor!</h1>
+                    <p>Your knowledge is helping preserve <span class="cultural-highlight">cultural heritage</span> for future generations.</p>
+                    <div class="welcome-actions">
+                        <button class="btn btn-primary"><i class="fas fa-plus-circle"></i> Verify Products</button>
+                        <button class="btn btn-outline"><i class="fas fa-check-double"></i> Review Submissions</button>
+                    </div>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Contributions</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Knowledge Views</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>7</h3>
+                            <p>Items Verified</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Appreciations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>You added knowledge about <strong>Umhlonyane harvesting techniques</strong></p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>You verified <strong>Traditional preparation of Impila</strong></p>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>You answered a question about <strong>seasonal plant availability</strong></p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Queue Preview -->
+                <div class="queue-preview">
+                    <div class="section-header">
+                        <h2>Pending Verification</h2>
+                        <a href="#verification-queue" class="view-all">View All</a>
+                    </div>
+                    <div class="queue-items">
+                        <div class="queue-item">
+                            <div class="queue-content">
+                                <h3>Traditional uses of African Potato</h3>
+                                <p>Submitted by: Community Member</p>
+                                <div class="cultural-tag">Zulu</div>
+                            </div>
+                            <div class="queue-actions">
+                                <button class="btn btn-sm btn-primary">Review</button>
+                            </div>
+                        </div>
+                        <div class="queue-item">
+                            <div class="queue-content">
+                                <h3>Harvesting timing for Devil's Claw</h3>
+                                <p>Submitted by: Community Member</p>
+                                <div class="cultural-tag">Tswana</div>
+                            </div>
+                            <div class="queue-actions">
+                                <button class="btn btn-sm btn-primary">Review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Questions -->
+                <div class="community-questions">
+                    <div class="section-header">
+                        <h2>Community Questions</h2>
+                        <a href="#community-engagement" class="view-all">View All</a>
+                    </div>
+                    <div class="question-items">
+                        <div class="question-item">
+                            <div class="question-content">
+                                <h3>What is the proper way to store traditional medicines long-term?</h3>
+                                <p>Asked by: Learning Seeker • 3 answers</p>
+                            </div>
+                            <div class="question-actions">
+                                <button class="btn btn-sm btn-outline">Answer</button>
+                            </div>
+                        </div>
+                        <div class="question-item">
+                            <div class="question-content">
+                                <h3>How do I identify mature Bulbine plants for harvesting?</h3>
+                                <p>Asked by: Learning Seeker • 1 answer</p>
+                            </div>
+                            <div class="question-actions">
+                                <button class="btn btn-sm btn-outline">Answer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Contributions Section -->
+            <section id="my-contributions" class="dashboard-section">
+                <div class="section-header">
+                    <h2>My Contributions</h2>
+                    <p>Manage and review the knowledge you've shared with the community</p>
+                </div>
+                
+                <div class="contributions-filters">
+                    <div class="filter-group">
+                        <label>Filter by:</label>
+                        <select>
+                            <option>All Contributions</option>
+                            <option>Published</option>
+                            <option>Draft</option>
+                            <option>Pending Review</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Sort by:</label>
+                        <select>
+                            <option>Newest First</option>
+                            <option>Most Viewed</option>
+                            <option>Most Appreciated</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button class="btn btn-primary"><i class="fas fa-download"></i> Export</button>
+                    </div>
+                </div>
+                
+                <div class="contributions-list">
+                    <div class="contribution-item">
+                        <div class="contribution-image" style="background-color: #8D6E63;">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="contribution-content">
+                            <h3>Traditional preparation of Umhlonyane</h3>
+                            <p>Detailed guide on harvesting, drying, and preparing Artemisia afra for respiratory health</p>
+                            <div class="contribution-meta">
+                                <span class="status published">Published</span>
+                                <span class="cultural-tag">Zulu</span>
+                                <span class="views"><i class="fas fa-eye"></i> 243</span>
+                                <span class="likes"><i class="fas fa-heart"></i> 45</span>
+                            </div>
+                        </div>
+                        <div class="contribution-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chart-line"></i> Insights</button>
+                        </div>
+                    </div>
+                    
+                    <div class="contribution-item">
+                        <div class="contribution-image" style="background-color: #689F38;">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="contribution-content">
+                            <h3>Seasonal harvesting guide for medicinal plants</h3>
+                            <p>Comprehensive calendar for optimal harvesting times based on lunar cycles and seasons</p>
+                            <div class="contribution-meta">
+                                <span class="status published">Published</span>
+                                <span class="cultural-tag">Multiple</span>
+                                <span class="views"><i class="fas fa-eye"></i> 187</span>
+                                <span class="likes"><i class="fas fa-heart"></i> 32</span>
+                            </div>
+                        </div>
+                        <div class="contribution-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chart-line"></i> Insights</button>
+                        </div>
+                    </div>
+                    
+                    <div class="contribution-item">
+                        <div class="contribution-image" style="background-color: #D32F2F;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contribution-content">
+                            <h3>Traditional preservation techniques</h3>
+                            <p>Methods for storing and preserving plant medicines to maintain potency</p>
+                            <div class="contribution-meta">
+                                <span class="status draft">Draft</span>
+                                <span class="cultural-tag">Xhosa</span>
+                                <span class="views"><i class="fas fa-eye"></i> 0</span>
+                                <span class="likes"><i class="fas fa-heart"></i> 0</span>
+                            </div>
+                        </div>
+                        <div class="contribution-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chart-line"></i> Insights</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Add Knowledge Section -->
+            <section id="add-knowledge" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Add New Knowledge</h2>
+                    <p>Share your cultural knowledge with the community</p>
+                </div>
+                
+                <div class="knowledge-form">
+                    <div class="form-step active" id="step1">
+                        <h3>Knowledge Type</h3>
+                        <div class="knowledge-type-selector">
+                            <div class="type-option">
+                                <input type="radio" id="type-plant" name="knowledge-type" checked>
+                                <label for="type-plant">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Plant Knowledge</span>
+                                    <small>Medicinal plants, identification, and uses</small>
+                                </label>
+                            </div>
+                            <div class="type-option">
+                                <input type="radio" id="type-practice" name="knowledge-type">
+                                <label for="type-practice">
+                                    <i class="fas fa-history"></i>
+                                    <span>Cultural Practice</span>
+                                    <small>Traditions, ceremonies, seasonal practices</small>
+                                </label>
+                            </div>
+                            <div class="type-option">
+                                <input type="radio" id="type-remedy" name="knowledge-type">
+                                <label for="type-remedy">
+                                    <i class="fas fa-mortar-pestle"></i>
+                                    <span>Healing Preparation</span>
+                                    <small>Remedies, formulations, applications</small>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-navigation">
+                            <button class="btn btn-primary next-btn">Continue</button>
+                        </div>
+                    </div>
+                    
+                    <!-- More form steps would be here -->
+                </div>
+            </section>
+            
+            <!-- More sections would be here -->
+        </main>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/contributor-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Add Knowledge</title>
+    <meta name="description" content="Share your cultural knowledge about plants and practices with the Imbewu community.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/add-knowledge.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="contributor-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search knowledge..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Knowledge Contributor</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="contributor-status">
+                <div class="status-badge verified">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Verified Contributor</span>
+                </div>
+                <p class="expertise-area">Plant Medicine & Traditional Practices</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="my-contributions.html" class="nav-item">
+                    <i class="fas fa-book"></i>
+                    <span>My Contributions</span>
+                </a>
+                <a href="add-knowledge.html" class="nav-item active">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Knowledge</span>
+                </a>
+                <a href="community-engagement.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="#elder-connections" class="nav-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Appointments</span>
+                </a>
+                <a href="#cultural-calendar" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Cultural Calendar</span>
+                </a>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-medal"></i>
+                    <span>Cultural Guardian</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div class="knowledge-form-container">
+                <div class="welcome-banner">
+                    <h1>Share Your Knowledge</h1>
+                    <p>Add information about healing plants or cultural practices to preserve ancestral wisdom</p>
+                </div>
+
+                <!-- Knowledge Type Selection -->
+                <div class="knowledge-type-selector">
+                    <div class="type-option active" data-type="plant">
+                        <div class="type-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="type-info">
+                            <h3>Healing Plant</h3>
+                            <p>Add information about medicinal plants, identification, and uses</p>
+                        </div>
+                    </div>
+                    <div class="type-option" data-type="practice">
+                        <div class="type-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <div class="type-info">
+                            <h3>Cultural Practice</h3>
+                            <p>Share traditions, ceremonies, rituals, or seasonal practices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plant Form -->
+                <form id="plant-form" class="knowledge-form active">
+                    <div class="form-section">
+                        <h3><i class="fas fa-info-circle"></i> Basic Plant Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="common_name">Common Name *</label>
+                                <input type="text" id="common_name" name="common_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="scientific_name">Scientific Name</label>
+                                <input type="text" id="scientific_name" name="scientific_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="local_names">Local Names (comma separated)</label>
+                                <input type="text" id="local_names" name="local_names" placeholder="Umhlonyane, Lengana, African Wormwood">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="plant_description">Description *</label>
+                                <textarea id="plant_description" name="description" rows="4" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-camera"></i> Visual Identification</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="plant_photo">Upload Photos</label>
+                                <div class="upload-area" id="plant-upload-area">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Drag & drop images here or click to browse</p>
+                                    <input type="file" id="plant_photo" name="photo" accept="image/*" multiple>
+                                </div>
+                                <div id="plant-preview" class="image-preview"></div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="identifying_features">Identifying Features</label>
+                                <textarea id="identifying_features" name="identifying_features" rows="3" placeholder="Leaf shape, flower color, distinctive bark, etc."></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="similar_plants">Similar Plants to Avoid</label>
+                                <textarea id="similar_plants" name="similar_plants" rows="2" placeholder="Plants that look similar but are toxic or have different uses"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-globe-africa"></i> Geographical Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="regions_found">Regions Found *</label>
+                                <select id="regions_found" name="regions_found" multiple required>
+                                    <option value="Eastern Cape">Eastern Cape</option>
+                                    <option value="Free State">Free State</option>
+                                    <option value="Gauteng">Gauteng</option>
+                                    <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                                    <option value="Limpopo">Limpopo</option>
+                                    <option value="Mpumalanga">Mpumalanga</option>
+                                    <option value="Northern Cape">Northern Cape</option>
+                                    <option value="North West">North West</option>
+                                    <option value="Western Cape">Western Cape</option>
+                                </select>
+                                <small>Hold Ctrl/Cmd to select multiple regions</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="habitat">Habitat</label>
+                                <input type="text" id="habitat" name="habitat" placeholder="Forests, grasslands, riverbanks, etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="growing_conditions">Growing Conditions</label>
+                                <input type="text" id="growing_conditions" name="growing_conditions" placeholder="Sunlight, soil type, water requirements">
+                            </div>
+                            <div class="form-group">
+                                <label for="seasonality">Seasonality</label>
+                                <input type="text" id="seasonality" name="seasonality" placeholder="When it flowers, fruits, or is best harvested">
+                            </div>
+                            <div class="form-group">
+                                <label for="conservation_status">Conservation Status</label>
+                                <select id="conservation_status" name="conservation_status">
+                                    <option value="">Select status</option>
+                                    <option value="Least Concern">Least Concern</option>
+                                    <option value="Near Threatened">Near Threatened</option>
+                                    <option value="Vulnerable">Vulnerable</option>
+                                    <option value="Endangered">Endangered</option>
+                                    <option value="Critically Endangered">Critically Endangered</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-heart"></i> Traditional Knowledge</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="traditional_uses">Traditional Uses *</label>
+                                <div id="traditional-uses-container">
+                                    <div class="cultural-use-entry">
+                                        <select class="cultural-group-select" name="cultural_group">
+                                            <option value="">Select cultural group</option>
+                                            <option value="Zulu">Zulu</option>
+                                            <option value="Xhosa">Xhosa</option>
+                                            <option value="Pedi">Pedi</option>
+                                            <option value="Tswana">Tswana</option>
+                                            <option value="Sotho">Sotho</option>
+                                            <option value="Tsonga">Tsonga</option>
+                                            <option value="Swazi">Swazi</option>
+                                            <option value="Venda">Venda</option>
+                                            <option value="Ndebele">Ndebele</option>
+                                        </select>
+                                        <input type="text" class="use-description" placeholder="Description of use">
+                                        <button type="button" class="btn-remove-use"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-cultural-use" class="btn-text"><i class="fas fa-plus"></i> Add Another Cultural Use</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="preparation_methods">Preparation Methods</label>
+                                <textarea id="preparation_methods" name="preparation_methods" rows="3" placeholder="How to prepare the plant for use"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="dosage_guidelines">Dosage Guidelines</label>
+                                <textarea id="dosage_guidelines" name="dosage_guidelines" rows="2" placeholder="Recommended amounts and frequency"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="administration_methods">Administration Methods</label>
+                                <input type="text" id="administration_methods" name="administration_methods" placeholder="Tea, poultice, inhalation, etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="contraindications">Contraindications</label>
+                                <textarea id="contraindications" name="contraindications" rows="2" placeholder="When not to use this plant"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="safety_precautions">Safety Precautions</label>
+                                <textarea id="safety_precautions" name="safety_precautions" rows="2" placeholder="Handling, storage, and usage precautions"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-flask"></i> Scientific Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="active_compounds">Active Compounds</label>
+                                <input type="text" id="active_compounds" name="active_compounds" placeholder="Known chemical constituents">
+                            </div>
+                            <div class="form-group">
+                                <label for="pharmacological_properties">Pharmacological Properties</label>
+                                <input type="text" id="pharmacological_properties" name="pharmacological_properties" placeholder="Antibacterial, anti-inflammatory, etc.">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="scientific_references">Scientific References</label>
+                                <textarea id="scientific_references" name="scientific_references" rows="3" placeholder="Research papers, studies, or publications"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="modern_applications">Modern Applications</label>
+                                <textarea id="modern_applications" name="modern_applications" rows="2" placeholder="Contemporary uses in healthcare"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="save-draft">Save as Draft</button>
+                        <button type="submit" class="btn btn-primary" id="submit-plant">Submit Plant Knowledge</button>
+                    </div>
+                </form>
+
+                <!-- Practice Form -->
+                <form id="practice-form" class="knowledge-form">
+                    <div class="form-section">
+                        <h3><i class="fas fa-info-circle"></i> Basic Practice Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="practice_title">Title *</label>
+                                <input type="text" id="practice_title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="practice_type">Type *</label>
+                                <select id="practice_type" name="type" required>
+                                    <option value="">Select type</option>
+                                    <option value="ceremony">Ceremony</option>
+                                    <option value="ritual">Ritual</option>
+                                    <option value="tradition">Tradition</option>
+                                    <option value="seasonal_practice">Seasonal Practice</option>
+                                    <option value="healing_practice">Healing Practice</option>
+                                    <option value="spiritual_practice">Spiritual Practice</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="practice_cultural_group">Cultural Group *</label>
+                                <select id="practice_cultural_group" name="cultural_group" required>
+                                    <option value="">Select cultural group</option>
+                                    <option value="Zulu">Zulu</option>
+                                    <option value="Xhosa">Xhosa</option>
+                                    <option value="Pedi">Pedi</option>
+                                    <option value="Tswana">Tswana</option>
+                                    <option value="Sotho">Sotho</option>
+                                    <option value="Tsonga">Tsonga</option>
+                                    <option value="Swazi">Swazi</option>
+                                    <option value="Venda">Venda</option>
+                                    <option value="Ndebele">Ndebele</option>
+                                    <option value="Pan-African">Pan-African</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="practice_short_description">Short Description *</label>
+                                <textarea id="practice_short_description" name="short_description" rows="2" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="practice_detailed_description">Detailed Description *</label>
+                                <textarea id="practice_detailed_description" name="detailed_description" rows="4" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-calendar-alt"></i> Temporal Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="time_of_year">Time of Year</label>
+                                <input type="text" id="time_of_year" name="time_of_year" placeholder="Season, month, or specific time">
+                            </div>
+                            <div class="form-group">
+                                <label for="lunar_phase">Lunar Phase</label>
+                                <select id="lunar_phase" name="lunar_phase">
+                                    <option value="">Select phase</option>
+                                    <option value="new_moon">New Moon</option>
+                                    <option value="waxing_crescent">Waxing Crescent</option>
+                                    <option value="first_quarter">First Quarter</option>
+                                    <option value="waxing_gibbous">Waxing Gibbous</option>
+                                    <option value="full_moon">Full Moon</option>
+                                    <option value="waning_gibbous">Waning Gibbous</option>
+                                    <option value="last_quarter">Last Quarter</option>
+                                    <option value="waning_crescent">Waning Crescent</option>
+                                    <option value="any">Any Phase</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="time_of_day">Time of Day</label>
+                                <select id="time_of_day" name="time_of_day">
+                                    <option value="">Select time</option>
+                                    <option value="dawn">Dawn</option>
+                                    <option value="morning">Morning</option>
+                                    <option value="midday">Midday</option>
+                                    <option value="afternoon">Afternoon</option>
+                                    <option value="dusk">Dusk</option>
+                                    <option value="evening">Evening</option>
+                                    <option value="night">Night</option>
+                                    <option value="any">Any Time</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="duration">Duration</label>
+                                <input type="text" id="duration" name="duration" placeholder="How long the practice takes">
+                            </div>
+                            <div class="form-group">
+                                <label for="frequency">Frequency</label>
+                                <input type="text" id="frequency" name="frequency" placeholder="How often it's performed">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-map-marker-alt"></i> Location and Context</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="location_context">Location Context</label>
+                                <select id="location_context" name="location_context">
+                                    <option value="">Select location</option>
+                                    <option value="home">Home</option>
+                                    <option value="community">Community</option>
+                                    <option value="sacred_site">Sacred Site</option>
+                                    <option value="natural_setting">Natural Setting</option>
+                                    <option value="any">Any Location</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="required_participants">Required Participants</label>
+                                <input type="text" id="required_participants" name="required_participants" placeholder="Who needs to be present">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="cultural_significance_practice">Cultural Significance</label>
+                                <textarea id="cultural_significance_practice" name="cultural_significance" rows="3"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="historical_context">Historical Context</label>
+                                <textarea id="historical_context" name="historical_context" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-tools"></i> Materials and Preparation</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="materials_needed">Materials Needed</label>
+                                <div id="materials-container">
+                                    <div class="material-entry">
+                                        <input type="text" class="material-item" placeholder="Item name">
+                                        <textarea class="material-preparation" placeholder="Special preparations (optional)" rows="1"></textarea>
+                                        <button type="button" class="btn-remove-material"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-material" class="btn-text"><i class="fas fa-plus"></i> Add Another Material</button>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="preparation_steps">Preparation Steps</label>
+                                <textarea id="preparation_steps" name="preparation_steps" rows="3"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="ritual_objects">Ritual Objects</label>
+                                <div id="ritual-objects-container">
+                                    <div class="ritual-object-entry">
+                                        <input type="text" class="ritual-object-name" placeholder="Object name">
+                                        <textarea class="ritual-object-significance" placeholder="Significance (optional)" rows="1"></textarea>
+                                        <button type="button" class="btn-remove-ritual-object"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-ritual-object" class="btn-text"><i class="fas fa-plus"></i> Add Another Object</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-list-ol"></i> Step-by-Step Process</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="procedure_steps">Procedure Steps</label>
+                                <div id="procedure-steps-container">
+                                    <div class="procedure-step-entry">
+                                        <input type="number" class="step-number" placeholder="1" min="1">
+                                        <textarea class="step-description" placeholder="Description of this step" rows="2"></textarea>
+                                        <input type="text" class="step-duration" placeholder="Duration (optional)">
+                                        <button type="button" class="btn-remove-step"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-procedure-step" class="btn-text"><i class="fas fa-plus"></i> Add Another Step</button>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="songs_chants">Songs or Chants</label>
+                                <textarea id="songs_chants" name="songs_chants" rows="3" placeholder="Lyrics, melodies, or instructions"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="prayers_invocations">Prayers or Invocations</label>
+                                <textarea id="prayers_invocations" name="prayers_invocations" rows="3" placeholder="Words, phrases, or instructions"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-bullseye"></i> Purpose and Outcomes</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="practice_purposes">Purposes</label>
+                                <div id="purposes-container">
+                                    <div class="purpose-entry">
+                                        <input type="text" class="purpose-item" placeholder="Purpose">
+                                        <button type="button" class="btn-remove-purpose"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-purpose" class="btn-text"><i class="fas fa-plus"></i> Add Another Purpose</button>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="expected_outcomes">Expected Outcomes</label>
+                                <textarea id="expected_outcomes" name="expected_outcomes" rows="3"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="symbolic_meanings">Symbolic Meanings</label>
+                                <textarea id="symbolic_meanings" name="symbolic_meanings" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-clock"></i> Modern Context</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="modern_adaptations">Modern Adaptations</label>
+                                <textarea id="modern_adaptations" name="modern_adaptations" rows="3" placeholder="How the practice has evolved"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="relevance_today">Relevance Today</label>
+                                <textarea id="relevance_today" name="relevance_today" rows="2"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="youth_engagement_strategies">Youth Engagement Strategies</label>
+                                <textarea id="youth_engagement_strategies" name="youth_engagement_strategies" rows="2" placeholder="How to involve younger generations"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-images"></i> Multimedia</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Upload Media</label>
+                                <div class="upload-area" id="practice-upload-area">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Drag & drop images, audio, or video here or click to browse</p>
+                                    <input type="file" id="practice_media" name="media" accept="image/*,audio/*,video/*" multiple>
+                                </div>
+                                <div id="practice-media-preview" class="media-preview"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-link"></i> Related Content</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="related_plants">Related Plants</label>
+                                <select id="related_plants" name="related_plants" multiple>
+                                    <!-- Will be populated dynamically -->
+                                </select>
+                                <small>Hold Ctrl/Cmd to select multiple plants</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="related_practices">Related Practices</label>
+                                <select id="related_practices" name="related_practices" multiple>
+                                    <!-- Will be populated dynamically -->
+                                </select>
+                                <small>Hold Ctrl/Cmd to select multiple practices</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-shield-alt"></i> Cultural Sensitivity</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="cultural_sensitivity_level">Sensitivity Level *</label>
+                                <select id="cultural_sensitivity_level" name="cultural_sensitivity_level" required>
+                                    <option value="public">Public (Suitable for everyone)</option>
+                                    <option value="community_only">Community Only (For cultural members)</option>
+                                    <option value="initiates_only">Initiates Only (For trained practitioners)</option>
+                                    <option value="restricted">Restricted (Elders and authorized only)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="verification_level">Verification Level</label>
+                                <select id="verification_level" name="verification_level">
+                                    <option value="personal">Personal Knowledge</option>
+                                    <option value="family">Family Tradition</option>
+                                    <option value="community">Community Verified</option>
+                                    <option value="regional">Regionally Recognized</option>
+                                    <option value="national">Nationally Recognized</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="save-practice-draft">Save as Draft</button>
+                        <button type="submit" class="btn btn-primary" id="submit-practice">Submit Cultural Practice</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Knowledge Submitted Successfully!</h3>
+            <p>Your contribution has been received and will be reviewed by our community moderators.</p>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="modal-close">Continue</button>
+                <button class="btn btn-outline" id="add-another">Add Another</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/add-knowledge.js"></script>
+</body>
+</html>

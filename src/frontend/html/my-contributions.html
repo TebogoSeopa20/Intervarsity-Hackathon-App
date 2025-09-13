@@ -1,0 +1,296 @@
+<!-- my-contributions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | My Contributions</title>
+    <meta name="description" content="Manage your cultural knowledge contributions on Imbewu.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/my-contributions.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="contributor-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search knowledge..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Knowledge Contributor</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="contributor-status">
+                <div class="status-badge verified">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Verified Contributor</span>
+                </div>
+                <p class="expertise-area">Plant Medicine & Traditional Practices</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="contributor-dashboard.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="my-contributions.html" class="nav-item active">
+                    <i class="fas fa-book"></i>
+                    <span>My Contributions</span>
+                </a>
+                <a href="add-knowledge.html" class="nav-item">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Knowledge</span>
+                </a>
+                <a href="community-engagement.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="#elder-connections" class="nav-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Appointments</span>
+                </a>
+                <a href="#cultural-calendar" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Cultural Calendar</span>
+                </a>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-medal"></i>
+                    <span>Cultural Guardian</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div class="contributions-container">
+                <div class="welcome-banner">
+                    <h1>My Contributions</h1>
+                    <p>Manage your plant knowledge and cultural practice submissions</p>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <div class="stat-icon total">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Total Contributions</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon approved">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Approved</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Pending Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter and Search -->
+                <div class="contributions-controls">
+                    <div class="filter-group">
+                        <label for="content-type">Content Type:</label>
+                        <select id="content-type">
+                            <option value="all">All Types</option>
+                            <option value="plant">Plants</option>
+                            <option value="practice">Cultural Practices</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="status-filter">Status:</label>
+                        <select id="status-filter">
+                            <option value="all">All Statuses</option>
+                            <option value="approved">Approved</option>
+                            <option value="pending">Pending</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <input type="text" placeholder="Search my contributions..." id="contributions-search">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Contributions List -->
+                <div class="contributions-list">
+                    <div class="list-header">
+                        <h2>Recent Contributions</h2>
+                        <div class="sort-options">
+                            <span>Sort by:</span>
+                            <select id="sort-by">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="views">Most Views</option>
+                                <option value="title">Title (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contributions-items">
+                        <!-- Plant Contribution Example -->
+                        <div class="contribution-item plant approved">
+                            <div class="item-preview">
+                                <img src="../images/plant-placeholder.jpg" alt="Umhlonyane Plant">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Umhlonyane (Artemisia afra)</h3>
+                                    <span class="status-badge approved">Approved</span>
+                                </div>
+                                <p class="item-description">Traditional medicinal plant used for respiratory conditions, fever, and digestive issues.</p>
+                                <div class="item-meta">
+                                    <span class="meta-item"><i class="fas fa-heart"></i> 42 Likes</span>
+                                    <span class="meta-item"><i class="fas fa-eye"></i> 256 Views</span>
+                                    <span class="meta-item"><i class="fas fa-calendar"></i> 2 days ago</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-outline view-item"><i class="fas fa-eye"></i> View</button>
+                                    <button class="btn btn-outline edit-item"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="btn btn-danger delete-item"><i class="fas fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Practice Contribution Example -->
+                        <div class="contribution-item practice pending">
+                            <div class="item-preview">
+                                <img src="../images/practice-placeholder.jpg" alt="Traditional Ceremony">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Traditional Harvesting Ceremony</h3>
+                                    <span class="status-badge pending">Pending Review</span>
+                                </div>
+                                <p class="item-description">Zulu ceremony for respectfully harvesting medicinal plants and giving thanks to ancestors.</p>
+                                <div class="item-meta">
+                                    <span class="meta-item"><i class="fas fa-heart"></i> 18 Likes</span>
+                                    <span class="meta-item"><i class="fas fa-eye"></i> 89 Views</span>
+                                    <span class="meta-item"><i class="fas fa-calendar"></i> 5 days ago</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-outline view-item"><i class="fas fa-eye"></i> View</button>
+                                    <button class="btn btn-outline edit-item"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="btn btn-danger delete-item"><i class="fas fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plant Contribution Example 2 -->
+                        <div class="contribution-item plant approved">
+                            <div class="item-preview">
+                                <img src="../images/plant-placeholder2.jpg" alt="Impila Plant">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Impila (Callilepis laureola)</h3>
+                                    <span class="status-badge approved">Approved</span>
+                                </div>
+                                <p class="item-description">Powerful medicinal plant used for various ailments but must be used with caution due to toxicity.</p>
+                                <div class="item-meta">
+                                    <span class="meta-item"><i class="fas fa-heart"></i> 37 Likes</span>
+                                    <span class="meta-item"><i class="fas fa-eye"></i> 198 Views</span>
+                                    <span class="meta-item"><i class="fas fa-calendar"></i> 1 week ago</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-outline view-item"><i class="fas fa-eye"></i> View</button>
+                                    <button class="btn btn-outline edit-item"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="btn btn-danger delete-item"><i class="fas fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Practice Contribution Example 2 -->
+                        <div class="contribution-item practice rejected">
+                            <div class="item-preview">
+                                <img src="../images/practice-placeholder2.jpg" alt="Healing Ritual">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Xhosa Healing Ritual</h3>
+                                    <span class="status-badge rejected">Needs Revision</span>
+                                </div>
+                                <p class="item-description">Traditional healing ritual using plant medicines and spiritual practices (requires more cultural context).</p>
+                                <div class="item-meta">
+                                    <span class="meta-item"><i class="fas fa-heart"></i> 8 Likes</span>
+                                    <span class="meta-item"><i class="fas fa-eye"></i> 45 Views</span>
+                                    <span class="meta-item"><i class="fas fa-calendar"></i> 2 weeks ago</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-outline view-item"><i class="fas fa-eye"></i> View</button>
+                                    <button class="btn btn-outline edit-item"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="btn btn-danger delete-item"><i class="fas fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn btn-outline" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                        <span class="page-info">Page 1 of 3</span>
+                        <button class="btn btn-outline">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon warning">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Delete Contribution</h3>
+            <p>Are you sure you want to delete "<span id="delete-item-name">Umhlonyane (Artemisia afra)</span>"? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancel-delete">Cancel</button>
+                <button class="btn btn-danger" id="confirm-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/my-contributions.js"></script>
+</body>
+</html>

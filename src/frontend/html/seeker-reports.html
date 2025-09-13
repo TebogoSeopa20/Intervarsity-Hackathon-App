@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Report Products</title>
+    <meta name="description" content="Report food safety issues and manage your reports">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/seeker-reports.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="seeker-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search your reports..." class="search-input" id="reportsSearchInput">
+            <button class="search-btn" id="reportsSearchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder2.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Knowledge Seeker</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="seeker-dashboard.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="foodId.html" class="nav-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Food Scanner</span>
+                </a>
+                <a href="seeker-engagements.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="seeker-reports.html" class="nav-item active">
+                    <i class="fas fa-flag"></i>
+                    <span>Report Product</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-medal"></i>
+                    <span>Consumer</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Reports Section -->
+            <section id="reports-section" class="dashboard-section active">
+                <div class="welcome-banner">
+                    <h1>Product Reports</h1>
+                    <p>Report food safety issues and manage your previous reports</p>
+                </div>
+
+                <!-- Reports Container -->
+                <div class="reports-container">
+                    <!-- Report Form -->
+                    <div class="report-form-container">
+                        <h3>Report a Product</h3>
+                        <form id="reportForm" class="report-form">
+                            <div class="form-group">
+                                <label for="productName">Product Name *</label>
+                                <input type="text" id="productName" name="productName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productBrand">Brand</label>
+                                <input type="text" id="productBrand" name="productBrand">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productBarcode">Barcode (if available)</label>
+                                <div class="barcode-input-group">
+                                    <input type="text" id="productBarcode" name="productBarcode">
+                                    <button type="button" id="scanBarcodeBtn" class="btn-icon">
+                                        <i class="fas fa-barcode"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="shopName">Shop Name *</label>
+                                <input type="text" id="shopName" name="shopName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="shopAddress">Shop Address</label>
+                                <textarea id="shopAddress" name="shopAddress" rows="2"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reportReason">Issue Type *</label>
+                                <select id="reportReason" name="reportReason" required>
+                                    <option value="">Select an issue type</option>
+                                    <option value="EXPIRED">Expired Product</option>
+                                    <option value="FAKE">Fake/Counterfeit Product</option>
+                                    <option value="MISLABELLED">Mislabeled Product</option>
+                                    <option value="MADE_ME_SICK">Made Me Sick</option>
+                                    <option value="UNUSUAL_TASTE">Unusual Taste/Smell</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reportDescription">Description *</label>
+                                <textarea id="reportDescription" name="reportDescription" rows="4" required placeholder="Please provide details about the issue you encountered..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Upload Evidence (optional)</label>
+                                <div class="file-upload-container">
+                                    <input type="file" id="evidenceUpload" multiple accept="image/*" style="display: none;">
+                                    <button type="button" id="triggerEvidenceUpload" class="btn-outline">
+                                        <i class="fas fa-upload"></i> Add Photos
+                                    </button>
+                                    <div id="uploadedFilesList" class="uploaded-files-list"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="reset" class="btn btn-outline">Clear Form</button>
+                                <button type="submit" class="btn btn-primary">Submit Report</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Reports List -->
+                    <div class="reports-list-container">
+                        <div class="reports-list-header">
+                            <h3>Your Reports</h3>
+                            <div class="filter-controls">
+                                <select id="statusFilter">
+                                    <option value="all">All Statuses</option>
+                                    <option value="PENDING_REVIEW">Pending Review</option>
+                                    <option value="UNDER_INVESTIGATION">Under Investigation</option>
+                                    <option value="RESOLVED">Resolved</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="reports-list" id="reportsList">
+                            <!-- Reports will be loaded here dynamically -->
+                            <div class="loading-reports">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading your reports...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Report Detail Modal -->
+    <div id="reportDetailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Report Details</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body" id="reportDetailContent">
+                <!-- Report details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content confirm-modal">
+            <div class="modal-header">
+                <h3>Confirm Deletion</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this report? This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelDelete">Cancel</button>
+                <button class="btn btn-danger" id="confirmDelete">Delete Report</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/seeker-reports.js"></script>
+</body>
+</html>

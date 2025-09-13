@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Reports Management</title>
+    <meta name="description" content="Manage and review user reports for cultural accuracy and authenticity.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/contributor-dashboard.css">
+    <link rel="stylesheet" href="../css/contributor-dash.css">
+    <link rel="stylesheet" href="../css/moderator-dashboard.css">
+    <link rel="stylesheet" href="../css/moderator-reports.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="moderator-dashboard.html" class="logo">
+            <i class="fas fa-seedling logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <div class="nav-search">
+            <input type="text" placeholder="Search reports..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-user">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">8</span>
+            </div>
+            <div class="user-profile">
+                <img src="../images/avatar-placeholder3.png" alt="User Profile" class="user-avatar">
+                <span class="user-name">Cultural Moderator</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="moderator-status">
+                <div class="status-badge moderator">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Community Advocater</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="moderator-dashboard.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="moderator-foodId.html" class="nav-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Food Scanner</span>
+                </a>
+                <a href="moderator-engagements.html" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Community Engagement</span>
+                </a>
+                <a href="moderator-reports.html" class="nav-item active">
+                    <i class="fas fa-flag"></i>
+                    <span>Reports & Analytics</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="cultural-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Community Moderator</span>
+                </div>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Reports Header -->
+            <div class="welcome-banner">
+                <h1>Reports Management</h1>
+                <p>Review and verify user-submitted reports for food safety and authenticity.</p>
+            </div>
+
+            <!-- Reports Tabs -->
+            <div class="reports-tabs">
+                <button class="tab-btn active" data-tab="seeker-reports">
+                    <i class="fas fa-user"></i> Seeker Reports
+                    <span class="badge" id="seeker-reports-count">0</span>
+                </button>
+                <button class="tab-btn" data-tab="contributor-reports">
+                    <i class="fas fa-users"></i> Contributor Reports
+                    <span class="badge" id="contributor-reports-count">0</span>
+                </button>
+                <button class="tab-btn" data-tab="analytics">
+                    <i class="fas fa-chart-bar"></i> Analytics
+                </button>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="reports-filters">
+                <div class="filter-group">
+                    <label for="status-filter">Status:</label>
+                    <select id="status-filter">
+                        <option value="all">All Statuses</option>
+                        <option value="PENDING_REVIEW">Pending Review</option>
+                        <option value="UNDER_INVESTIGATION">Under Investigation</option>
+                        <option value="AWAITING_DISTRIBUTOR_RESPONSE">Awaiting Distributor Response</option>
+                        <option value="RESOLVED">Resolved</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="date-filter">Date Range:</label>
+                    <select id="date-filter">
+                        <option value="all">All Time</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                <div class="filter-group custom-date-range" style="display: none;">
+                    <label for="start-date">From:</label>
+                    <input type="date" id="start-date">
+                    <label for="end-date">To:</label>
+                    <input type="date" id="end-date">
+                </div>
+                <div class="filter-group">
+                    <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
+                    <button id="reset-filters" class="btn btn-outline">Reset</button>
+                </div>
+            </div>
+
+            <!-- Seeker Reports Section -->
+            <section id="seeker-reports" class="reports-section active">
+                <div class="section-header">
+                    <h2>Seeker Reports</h2>
+                    <p>Reports from users about suspicious or problematic products</p>
+                </div>
+                
+                <div class="reports-list" id="seeker-reports-list">
+                    <div class="loading-state">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading seeker reports...</p>
+                    </div>
+                </div>
+                
+                <div class="pagination" id="seeker-pagination">
+                    <button class="btn btn-outline" id="seeker-prev">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <span class="page-info" id="seeker-page-info">Page 1 of 1</span>
+                    <button class="btn btn-outline" id="seeker-next">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Contributor Reports Section -->
+            <section id="contributor-reports" class="reports-section">
+                <div class="section-header">
+                    <h2>Contributor Reports</h2>
+                    <p>Reports from contributors about suspicious batches or distributors</p>
+                </div>
+                
+                <div class="reports-list" id="contributor-reports-list">
+                    <div class="loading-state">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading contributor reports...</p>
+                    </div>
+                </div>
+                
+                <div class="pagination" id="contributor-pagination">
+                    <button class="btn btn-outline" id="contributor-prev">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <span class="page-info" id="contributor-page-info">Page 1 of 1</span>
+                    <button class="btn btn-outline" id="contributor-next">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="reports-section">
+                <div class="section-header">
+                    <h2>Reports Analytics</h2>
+                    <p>Insights and trends from user reports</p>
+                </div>
+                
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Report Statistics</h3>
+                        <div class="stats-container" id="report-stats">
+                            <div class="loading-state">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading statistics...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <h3>Status Distribution</h3>
+                        <div class="chart-container" id="status-chart">
+                            <div class="loading-state">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading chart...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <h3>Reason Distribution</h3>
+                        <div class="chart-container" id="reason-chart">
+                            <div class="loading-state">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading chart...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list" id="analytics-activity">
+                            <div class="loading-state">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading activity...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Report Detail Modal -->
+    <div class="modal" id="report-detail-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-report-title">Report Details</h2>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-report-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <div class="status-update-section">
+                    <label for="status-update">Update Status:</label>
+                    <select id="status-update">
+                        <option value="PENDING_REVIEW">Pending Review</option>
+                        <option value="UNDER_INVESTIGATION">Under Investigation</option>
+                        <option value="AWAITING_DISTRIBUTOR_RESPONSE">Awaiting Distributor Response</option>
+                        <option value="RESOLVED">Resolved</option>
+                    </select>
+                    <button class="btn btn-primary" id="update-status-btn">Update Status</button>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-outline" id="modal-close-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/moderator-reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbewu | Sign Up</title>
+    <meta name="description" content="Join Imbewu - AI-powered Food Safety Scanner for Child Health">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/form-status.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/signup2.css">
+    <link rel="stylesheet" href="../css/terms-modal.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="landing.html" class="logo">
+            <i class="fas fa-shield-alt logo-icon"></i>
+            <span class="logo-text">Imbewu</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="landing.html#about">About</a></li>
+            <li><a href="landing.html#features">Features</a></li>
+            <li><a href="landing.html#testimonials">Testimonials</a></li>
+            <li><a href="landing.html#community">Community</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="login.html">
+                <button class="btn btn-outline">Sign In</button>
+            </a>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="landing.html" class="logo">
+                <i class="fas fa-shield-alt logo-icon"></i>
+                <span class="logo-text">Imbewu</span>
+            </a>
+            <button id="mobile-nav-close" class="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="landing.html#about">About</a></li>
+            <li><a href="landing.html#features">Features</a></li>
+            <li><a href="landing.html#testimonials">Testimonials</a></li>
+            <li><a href="landing.html#community">Community</a></li>
+        </ul>
+        <div class="mobile-auth-buttons">
+            <a href="login.html"><button class="btn btn-outline">Sign In</button></a>
+        </div>
+    </nav>
+
+    <main class="signup-container">
+        <section class="signup-form-container">
+            <h1>Join Our Food Safety Community</h1>
+            <p class="signup-intro">Create your account to access food safety scanning, product alerts, and community protection tools.</p>
+            
+            <form id="signupForm" class="signup-form" novalidate>
+                <!-- Step 1: Role Selection -->
+                <fieldset class="form-step active" id="step1">
+                    <legend class="step-title">Select Your Role</legend>
+                    <div class="role-selection">
+                        <div class="role-option">
+                            <input type="radio" id="parent" name="role" value="parent" checked>
+                            <label for="parent">
+                                <i class="fas fa-user"></i>
+                                <span>Parent/Caregiver</span>
+                                <small>Protect your family from dangerous food products</small>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="vendor" name="role" value="vendor">
+                            <label for="vendor">
+                                <i class="fas fa-store"></i>
+                                <span>Vendor/Shop Owner</span>
+                                <small>Verify your products and build customer trust</small>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="community" name="role" value="community">
+                            <label for="community">
+                                <i class="fas fa-users"></i>
+                                <span>Community Advocate</span>
+                                <small>Help monitor food safety in your neighborhood</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-primary next-btn">Continue</button>
+                    </div>
+                </fieldset>
+
+                <!-- Step 2: Personal Information -->
+                <fieldset class="form-step" id="step2">
+                    <legend class="step-title">Personal Information</legend>
+                    <div class="form-group">
+                        <label for="full_name">Full Name*</label>
+                        <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" class="styled-input" required>
+                        <span class="error-message" id="full_name_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" class="styled-input" required>
+                        <span class="error-message" id="email_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your contact number" class="styled-input" required>
+                        <span class="error-message" id="phone_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="community_location">Community/Location*</label>
+                        <select id="community_location" name="community_location" class="styled-input" required>
+                            <option value="">Select your community area</option>
+                            <option value="soweto">Soweto, Johannesburg</option>
+                            <option value="alexandra">Alexandra, Johannesburg</option>
+                            <option value="khayelitsha">Khayelitsha, Cape Town</option>
+                            <option value="gugulethu">Gugulethu, Cape Town</option>
+                            <option value="mdantsane">Mdantsane, East London</option>
+                            <option value="tshwane">Tshwane Townships</option>
+                            <option value="durban">Durban Townships</option>
+                            <option value="rural">Rural Community</option>
+                            <option value="other">Other South African Community</option>
+                        </select>
+                        <span class="error-message" id="community_location_error"></span>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Continue</button>
+                    </div>
+                </fieldset>
+
+                <!-- Step 3: Account Security -->
+                <fieldset class="form-step" id="step3">
+                    <legend class="step-title">Account Security</legend>
+                    <div class="form-group">
+                        <label for="password">Password*</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="password" name="password" placeholder="Create a strong password" class="styled-input" required>
+                            <button type="button" class="toggle-password-visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error-message" id="password_error"></span>
+                        <div class="password-requirements">
+                            <p>Password must:</p>
+                            <ul>
+                                <li id="length">Be at least 8 characters long</li>
+                                <li id="uppercase">Contain at least 1 uppercase letter</li>
+                                <li id="lowercase">Contain at least 1 lowercase letter</li>
+                                <li id="number">Contain at least 1 number</li>
+                                <li id="special">Contain at least 1 special character</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password*</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" class="styled-input" required>
+                            <button type="button" class="toggle-password-visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error-message" id="confirmPassword_error"></span>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Continue</button>
+                    </div>
+                </fieldset>
+
+                <!-- Step 4: Terms and Community Guidelines -->
+                <fieldset class="form-step" id="step4">
+                    <legend class="step-title">Terms & Community Guidelines</legend>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="termsAgree" name="termsAgree" class="styled-checkbox" required>
+                            <label for="termsAgree">I agree to the <a href="#" id="showTerms" class="terms-link">Terms of Service</a> and <a href="#" id="showPrivacy" class="terms-link">Privacy Policy</a></label>
+                        </div>
+                        <span class="error-message" id="termsAgree_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="guidelinesAgree" name="guidelinesAgree" class="styled-checkbox" required>
+                            <label for="guidelinesAgree">I agree to report only accurate information and use this platform responsibly to protect my community</label>
+                        </div>
+                        <span class="error-message" id="guidelinesAgree_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="alertsAgree" name="alertsAgree" class="styled-checkbox">
+                            <label for="alertsAgree">I want to receive immediate safety alerts about dangerous products in my area</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-btn">Back</button>
+                        <button type="submit" class="btn btn-primary submit-btn">Create Account</button>
+                    </div>
+                    <div id="formStatus" class="form-status-message"></div>
+                </fieldset>
+            </form>
+            
+            <div class="signup-footer">
+                <p>Already have an account? <a href="login.html">Sign in here</a></p>
+            </div>
+        </section>
+        <section class="signup-image">
+            <div class="signup-overlay">
+                <h2>Join Our <span class="gradient-text">Food Safety</span> Community</h2>
+                <ul class="benefit-list">
+                    <li><i class="fas fa-camera"></i> Scan products to identify harmful ingredients and counterfeits</li>
+                    <li><i class="fas fa-bell"></i> Receive immediate safety alerts about dangerous products</li>
+                    <li><i class="fas fa-store"></i> Check vendor safety ratings before purchasing</li>
+                    <li><i class="fas fa-users"></i> Connect with other parents and community advocates</li>
+                    <li><i class="fas fa-shield-alt"></i> Protect children from dangerous snacks in your community</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms and Conditions</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="terms-updated">Last Updated: August 30, 2025</p>
+                
+                <section class="terms-section">
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing or using the Imbewu platform ("the Service"), operated by Imbewu ("we," "us," or "our"), you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of the terms, you may not access the Service.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>2. Description of Service</h3>
+                    <p>Imbewu is an AI-powered food safety scanner that provides:</p>
+                    <ul>
+                        <li>Product scanning and ingredient identification</li>
+                        <li>Safety alerts for dangerous or recalled products</li>
+                        <li>Vendor safety ratings and community reports</li>
+                        <li>Food safety education and resources</li>
+                        <li>Community reporting features</li>
+                    </ul>
+                    <p><strong>Important:</strong> While Imbewu provides food safety information, users should always exercise caution and common sense when consuming food products.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>3. User Accounts</h3>
+                    <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account.</p>
+                    <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>4. Community Reporting Guidelines</h3>
+                    <p>As a user of Imbewu, you agree to:</p>
+                    <ul>
+                        <li>Report only accurate and verified information about products</li>
+                        <li>Not misuse the reporting system for personal disputes</li>
+                        <li>Provide clear evidence when reporting dangerous products</li>
+                        <li>Respect privacy and avoid sharing personal information about vendors without consent</li>
+                        <li>Use the platform to improve community safety, not for harassment</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>5. Intellectual Property Rights</h3>
+                    <p>The Service and its original content, features, and functionality are and will remain the exclusive property of Imbewu and its licensors. The Service is protected by copyright, trademark, and other laws of both the South Africa and foreign countries.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>6. User Contributions</h3>
+                    <p>By posting, uploading, or contributing any content to the Service, you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, modify, publicly perform, publicly display, reproduce, and distribute such content on and through the Service.</p>
+                    <p>You retain any and all of your rights to any content you submit, post or display on or through the Service and you are responsible for protecting those rights.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>7. Prohibited Uses</h3>
+                    <p>You may use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:</p>
+                    <ul>
+                        <li>In any way that violates any applicable national or international law or regulation</li>
+                        <li>To make false reports about products or vendors</li>
+                        <li>To harass, intimidate, or threaten vendors or other community members</li>
+                        <li>To impersonate or attempt to impersonate the company, a company employee, another user, or any other person or entity</li>
+                        <li>In any way that infringes upon the rights of others, or in any way is illegal, threatening, fraudulent, or harmful</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>8. Safety Disclaimer</h3>
+                    <p><strong>Important:</strong> While Imbewu strives to provide accurate food safety information, we cannot guarantee complete accuracy of all product information, especially for unregulated or informal market products. Users should always:</p>
+                    <ul>
+                        <li>Exercise caution when consuming unfamiliar products</li>
+                        <li>Check expiration dates personally when possible</li>
+                        <li>Seek medical attention immediately if food poisoning is suspected</li>
+                        <li>Report adverse reactions to local health authorities</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>9. Limitation of Liability</h3>
+                    <p>In no event shall Imbewu, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+                    <ul>
+                        <li>Your access to or use of or inability to access or use the Service</li>
+                        <li>Any conduct or content of any third party on the Service</li>
+                        <li>Any content obtained from the Service</li>
+                        <li>Unauthorized access, use or alteration of your transmissions or content</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>10. Indemnification</h3>
+                    <p>You agree to defend, indemnify and hold harmless Imbewu and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of:</p>
+                    <ul>
+                        <li>Your use and access of the Service</li>
+                        <li>Your violation of any term of these Terms</li>
+                        <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right</li>
+                    </ul>
+                </section>
+
+                <section class="terms-section">
+                    <h3>11. Changes to Terms</h3>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>12. Governing Law</h3>
+                    <p>These Terms shall be governed and construed in accordance with the laws of South Africa, without regard to its conflict of law provisions.</p>
+                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
+                </section>
+
+                <section class="terms-section">
+                    <h3>13. Contact Information</h3>
+                    <p>If you have any questions about these Terms, please contact us at:</p>
+                    <address>
+                        Imbewu Food Safety Initiative<br>
+                        Email: <a href="mailto:legal@imbewu.org">tebogoseopa10@gmail.com</a><br>
+                        Postal Address: PO Box 123, Community Safety District, Johannesburg, 2193, South Africa
+                    </address>
+                </section>
+
+                <div class="terms-acceptance">
+                    <p>By using our Service, you acknowledge that you have read and understood these Terms and Conditions and agree to be bound by them.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="acceptTerms">I Accept</button>
+                <button class="btn btn-outline" id="closeTerms">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <article class="footer-column">
+                    <header class="footer-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        Imbewu
+                    </header>
+                    <p>Protecting children from dangerous snacks with AI-powered food safety scanning and community reporting.</p>
+                </article>
+                <article class="footer-column">
+                    <h3>Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Product Scanning</a></li>
+                        <li><a href="#">Safety Alerts</a></li>
+                        <li><a href="#">Vendor Ratings</a></li>
+                        <li><a href="#">Community Reporting</a></li>
+                    </ul>
+                </article>
+                <article class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Food Safety Tips</a></li>
+                        <li><a href="#">Dangerous Ingredients Guide</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Educational Materials</a></li>
+                    </ul>
+                </article>
+                <article class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" id="showTermsFooter">Privacy Policy</a></li>
+                    </ul>
+                </article>
+            </div>
+            <footer class="footer-bottom">
+                <p>&copy; 2025 Imbewu. All rights reserved.</p>
+            </footer>
+        </div>
+    </footer>
+
+    <script src="../js/signup.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/terms-modal.js"></script>
+</body>
+</html>
