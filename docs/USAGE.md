@@ -21,12 +21,9 @@ npm start
 3. Step 3 -> See the output/result
 
 ## 🎥 Demo
-``` c
-// TODO: Link your demo video and PowerPoint here
-```
-Check out the Demos: 
-- [Demo Video](../demo/demo.mp4)
-- [Demo Presentation](../demo/demo.pptx)
+### Demo Video : https://youtu.be/cXYUzAjx-oQ?si=aldaRYyjeepuS3Q7
+### Presentation Slides: https://drive.google.com/file/d/1OP_E9EvIGDf2If2h6Qovbb9w67DW0ys1/view?usp=sharing
+
 
 ## 📌 Notes
 ``` c
