@@ -1,6 +1,6 @@
 # Imbewu – AI-Powered Food Safety Scanner 🌍🍏
 
-Imbewu is a **web application** developed during the **Adapt IT Hackathon (Wits University, 2025)**.  
+Imbewu is a **web application** developed during the **Intervarsity Hackathon (Representing Wits University, 2025)**.  
 It empowers communities to protect children from dangerous foods by combining **AI-powered product scanning**, **community reporting**, and **vendor safety ratings**.  
 
 ---
