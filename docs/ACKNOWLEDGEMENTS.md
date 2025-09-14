@@ -409,7 +409,7 @@ POST /nutritionGuidance
 const options = {
   method: 'POST',
   headers: {
-    'x-rapidapi-key': '566b36e871mshf136eda735af7d0p15faa2jsneeec1b98f446',
+    'x-rapidapi-key': 'myKey',
     'x-rapidapi-host': 'ai-workout-planner-exercise-fitness-nutrition-guide.p.rapidapi.com',
     'Content-Type': 'application/json'
   },
