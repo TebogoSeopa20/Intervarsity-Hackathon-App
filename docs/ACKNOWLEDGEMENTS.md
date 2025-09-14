@@ -11,6 +11,8 @@
 I'm using AI Workout Planner Nutrition API (/analyzeFoodPlate), which has a built-in AI vision model to scan and analyze food from images.
 Since my App is powered by two powerful APIs, AI Workout Planner Nutrition API. and Open Food Facts API. The Open Food Facts API is complementary, it’s a database API for barcodes and nutrition info, not an AI scanner.
 
+## Open Food Facts API Documentation
+
 ```markdown
 # Tutorial on using the Open Food Facts API
 
@@ -265,7 +267,7 @@ https://world.openfoodfacts.net/api/v2/search?nutrition_grades_tags=c&fields=cod
 Perfect 👍 thanks for sharing that full API spec.
 From this documentation, the **nutrition-related parts** are the ones that deal with analyzing food and generating nutrition insights. I’ll strip out the workout-only sections and keep only the **Nutrition API**.
 
-Here’s the **Nutrition API Documentation** in Markdown:
+## Nutrition API Documentation
 
 ````markdown
 # 🥗 AI Workout Planner | Nutrition API Documentation
