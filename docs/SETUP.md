@@ -1,4 +1,3 @@
-Here’s a properly formatted **Markdown** version of your setup instructions:
 
 ````markdown
 > *This document serves as a template for you to write **setup** instructions for your project.*  
