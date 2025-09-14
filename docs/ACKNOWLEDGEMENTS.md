@@ -6,20 +6,9 @@
 
 # Acknowledgements
 
-This document lists all **third-party repositories, modules, libraries, frameworks, APIs, and datasets** used in this project.  
-
----
-
-## 📦 Libraries, Frameworks & Submodules
-| Name                 | Link / Repo                                           | Author(s)       | Usage                  |
-|----------------------|-------------------------------------------------------|-----------------|------------------------|
-| IntricatePointers    | https://github.com/DnA-IntRicate/IntricatePointers    | Adam Foflonker  | Memory management      |
-| fast_obj             | https://github.com/thisistherk/fast_obj               | Richard Knight  | Parsing OBJ files      |
-
----
-
 ## 🌐 APIs & Services Dcumentation
-### Our APP is powered by two powerful APIs, Open Food Facts API and Nutrition Guide
+### Our APP is powered by two powerful APIs, Open Food Facts API and Nutrition Guide. I'm using AI Workout Planner Nutrition API (/analyzeFoodPlate), which has a built-in AI vision model to scan and analyze food from images.
+Since my App is powered by two powerful APIs, AI Workout Planner Nutrition API. and Open Food Facts API. The Open Food Facts API is complementary, it’s a database API for barcodes and nutrition info, not an AI scanner.
 
 ```markdown
 # Tutorial on using the Open Food Facts API
