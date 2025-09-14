@@ -7,7 +7,8 @@
 # Acknowledgements
 
 ## 🌐 APIs & Services Dcumentation
-### Our APP is powered by two powerful APIs, Open Food Facts API and Nutrition Guide. I'm using AI Workout Planner Nutrition API (/analyzeFoodPlate), which has a built-in AI vision model to scan and analyze food from images.
+### Our APP is powered by two powerful APIs, Open Food Facts API and Nutrition Guide.
+I'm using AI Workout Planner Nutrition API (/analyzeFoodPlate), which has a built-in AI vision model to scan and analyze food from images.
 Since my App is powered by two powerful APIs, AI Workout Planner Nutrition API. and Open Food Facts API. The Open Food Facts API is complementary, it’s a database API for barcodes and nutrition info, not an AI scanner.
 
 ```markdown
